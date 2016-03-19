@@ -1,8 +1,0 @@
-[ 2016-03-18T17:14:05+08:00 ] 127.0.0.1 /index.php?g=install&a=testdbpwd
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
-NOTIC: [8] Undefined index: db_name F:\web\thinkcmf\simplewind\Core\Library\Think\Db.class.php 第 68 行.
-SQL: show databases; [ RunTime:0.0960s ]
-

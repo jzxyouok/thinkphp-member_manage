@@ -1,0 +1,87 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="{:U('Member/index')}">{:L('ADMIN_MEMBER_INDEX')}</a></li>
+			<li><a href="{:U('Member/add')}">{:L('ADMIN_MEMBER_ADD')}</a></li>
+		</ul>
+		<form class="well form-search" method="post" action="{:U('Member/index')}">
+			{:L('SEARCH_TYPE')}
+			<select name="search_type" id="search_type" style="width: 100px;">
+				<option value="member_id">{:L('MEMBER_ID')}</option>
+				<option value="member_name">{:L('NAME')}</option>
+				<option value="mobile">{:L('MOBILE')}</option>
+				<option value="rid">{:L('RID')}</option>
+			</select>
+			{:L('KEYWORD')}
+			<input type="text" name="keywords" style="width: 200px;" value="" placeholder="请输入关键字...">
+			<button class="btn btn-primary">{:L('SEARCH')}</button>
+		</form>
+		<table class="table table-hover table-bordered">
+			<thead>
+			<tr>
+				<th width="30">ID</th>
+				<th align="left">{:L('MEMBER_ID')}</th>
+				<th align="left">{:L('NAME')}</th>
+				<th width="30">{:L('SEX')}</th>
+				<th width="30">{:L('AGE')}</th>
+				<th align="left">{:L('MOBILE')}</th>
+				<th align="left">{:L('OCCUPATION')}</th>
+				<th align="left">{:L('AREA')}</th>
+				<th align="left">{:L('WEIXIN')}</th>
+				<th align="left">{:L('QQ')}</th>
+				<th align="left">{:L('EMAIL')}</th>
+				<th align="left">{:L('RANK')}</th>
+				<th align="left">{:L('RID')}</th>
+				<th align="left">{:L('REMARK')}</th>
+				<th width="60" align="left">{:L('STATUS')}</th>
+				<th align="left">{:L('HANDLE_USER')}</th>
+				<th align="left">{:L('HANDLE_TIME')}</th>
+				<th width="60">{:L('ACTIONS')}</th>
+			</tr>
+			</thead>
+			<tbody>
+			<foreach name="members" item="vo">
+				<tr>
+					<td>{$vo.id}</td>
+					<td>{$vo.member_id}</td>
+					<td>{$vo.member_name}</td>
+					<td><if condition="$vo['sex'] == 1">男<else />女</if></td>
+					<td>{$vo.age}</td>
+					<td>{$vo.mobile}</td>
+					<td>{$vo.occupation}</td>
+					<td>{$vo.area}</td>
+					<td>{$vo.weixin}</td>
+					<td>{$vo.qq}</td>
+					<td>{$vo.email}</td>
+					<td>
+						<if condition="$vo.rank eq 1"> 卖咖
+							<elseif condition="$vo.rank eq 2"/>资深卖咖
+							<elseif condition="$vo.rank eq 3"/>大咖
+						</if>
+					</td>
+					<td>{$vo.rid}</td>
+					<td>{$vo.remark}</td>
+					<td>
+						<if condition="$vo['status'] eq 1">
+							<font color="green">√</font>
+							<else />
+							<font color="red">╳</font>
+						</if>
+					</td>
+					<td>{$vo.handle_user}</td>
+					<td><php>echo date('Y-m-d',$vo['update_time']);</php></td>
+					<td>
+						<a href="{:U('Member/edit',array('id'=>$vo['id']))}">{:L('EDIT')}</a>|
+						<a class="js-ajax-delete" href="{:U('Member/delete',array('id'=>$vo['id']))}">{:L('DELETE')}</a>
+					</td>
+				</tr>
+			</foreach>
+			</tbody>
+		</table>
+		<div class="pagination">{$page}</div>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

@@ -44,48 +44,36 @@ var GV = {
 			z-index:9999;
 		}
 	</style><?php endif; ?>
+<style>
+li {
+	list-style: none;
+}
+</style>
 </head>
 <body>
 	<div class="wrap">
-		<ul class="nav nav-tabs">
-			<li class="active"><a><?php echo L('USER_OAUTHADMIN_INDEX');?></a></li>
-		</ul>
-		<form method="post" class="js-ajax-form">
-			<table class="table table-hover table-bordered">
-				<thead>
-					<tr>
-						<th align="center">ID</th>
-						<th><?php echo L('USER_FROM');?></th>
-						<th><?php echo L('USERNAME');?></th>
-						<th><?php echo L('AVATAR');?></th>
-						<th><?php echo L('BINGDING_ACCOUNT');?></th>
-						<th><?php echo L('FIRST_LOGIN_TIME');?></th>
-						<th><?php echo L('LAST_LOGIN_TIME');?></th>
-						<th><?php echo L('LAST_LOGIN_IP');?></th>
-						<th><?php echo L('LOGIN_TIMES');?></th>
-						<th align="center"><?php echo L('ACTIONS');?></th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php if(is_array($lists)): foreach($lists as $key=>$vo): ?><tr>
-						<td align="center"><?php echo ($vo["id"]); ?></td>
-						<td><?php echo ($vo["from"]); ?></td>
-						<td><?php echo ($vo["name"]); ?></td>
-						<td><img width="25" height="25" src="<?php echo ($vo["head_img"]); ?>" /></td>
-						<td><?php echo ((isset($vo['uid']) && ($vo['uid'] !== ""))?($vo['uid']):'无'); ?></td>
-						<td><?php echo ($vo['create_time']); ?></td>
-						<td><?php echo ($vo['last_login_time']); ?></td>
-						<td><?php echo ($vo["last_login_ip"]); ?></td>
-						<td><?php echo ($vo["login_times"]); ?></td>
-						<td align="center">
-							<a href="<?php echo U('oauthadmin/delete',array('id'=>$vo['id']));?>" class="js-ajax-delete"><?php echo L('DELETE');?></a>
-						</td>
-					</tr><?php endforeach; endif; ?>
-				</tbody>
-			</table>
-			<div class="pagination"><?php echo ($page); ?></div>
-		</form>
+		<div id="error_tips">
+			<h2><?php echo L('CACHE_CLEARED');?></h2>
+			<div class="error_cont">
+				<ul>
+					<li><?php echo L('CACHE_CLEARED');?></li>
+				</ul>
+				<div class="error_return">
+					<a href="javascript:close_app();" class="btn"><?php echo L('CLOSE');?></a>
+				</div>
+			</div>
+		</div>
 	</div>
 	<script src="/public/js/common.js"></script>
+	<script>
+		var close_timeout = setTimeout(function() {
+			parent.close_current_app();
+		}, 3000);
+
+		function close_app() {
+			clearTimeout(close_timeout);
+			parent.close_current_app();
+		}
+	</script>
 </body>
 </html>

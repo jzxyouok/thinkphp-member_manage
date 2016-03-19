@@ -1,0 +1,116 @@
+<admintpl file="header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:U('Member/index')}">{:L('ADMIN_MEMBER_INDEX')}</a></li>
+        <li class="active"><a href="">{:L('ADMIN_MEMBER_EDIT')}</a></li>
+    </ul>
+    <form class="form-horizontal js-ajax-form" action="{:U('Member/edit_post')}" method="post">
+        <fieldset>
+            <div class="control-group">
+                <label class="control-label">{:L('NAME')}</label>
+                <div class="controls">
+                    <input type="text" name="member_name" value="{$data.member_name}" id="member_name"/>
+                    <span class="form-required">*</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">{:L('SEX')}</label>
+                <div class="controls">
+                    <label class="radio inline" for="male"><input type="radio" name="sex" value="1" <php>if($data['sex']==1) echo 'checked';</php> id="male" />男</label>
+                    <label class="radio inline" for="female"><input type="radio" name="sex" value="2" <php>if($data['sex']==2) echo 'checked';</php> id="female">女</label>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">{:L('AGE')}</label>
+                <div class="controls">
+                    <input type="text" name="age" value="{$data.age}" id="age"/>
+                    <span class="form-required"></span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">{:L('MOBILE')}</label>
+                <div class="controls">
+                    <input type="text" name="mobile" value="{$data.mobile}" id="mobile"/>
+                    <span class="form-required">*</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">{:L('OCCUPATION')}</label>
+                <div class="controls">
+                    <input type="text" name="occupation" value="{$data.occupation}" id="occupation"/>
+                    <span class="form-required"></span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">{:L('AREA')}</label>
+                <div class="controls">
+                    <input type="text" name="area" value="{$data.area}" id="area"/>
+                    <span class="form-required"></span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">{:L('WEIXIN')}</label>
+                <div class="controls">
+                    <input type="text" name="weixin" value="{$data.weixin}" id="weixin"/>
+                    <span class="form-required"></span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">{:L('QQ')}</label>
+                <div class="controls">
+                    <input type="text" name="qq" value="{$data.qq}" id="qq"/>
+                    <span class="form-required"></span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">{:L('EMAIL')}</label>
+                <div class="controls">
+                    <input type="text" name="email" value="{$data.email}" id="email"/>
+                    <span class="form-required"></span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">{:L('RANK')}</label>
+                <div class="controls">
+                    <span>
+                        <if condition="$data.rank eq 1"> 卖咖
+                            <elseif condition="$data.rank eq 2"/>资深卖咖
+                            <else /> 大咖
+                        </if>
+                    </span>
+                    <!--<span class="form-required">*</span>-->
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">{:L('RID')}</label>
+                <div class="controls">
+                    <input type="text" name="rid" value="{$data.rid}" id="rid"/>
+                    <span class="form-required">*</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">{:L('REMARK')}</label>
+                <div class="controls">
+                    <textarea name="remark" rows="2" cols="20" id="remark" class="inputtext" style="height: 100px; width: 500px;">{$data.remark}</textarea>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">{:L('STATUS')}</label>
+                <div class="controls">
+                    <label class="radio inline" for="active_true"><input type="radio" name="status" value="1" checked id="active_true" />{:L('ENABLED')}</label>
+                    <label class="radio inline" for="active_false"><input type="radio" name="status" value="0" id="active_false">{:L('DISABLED')}</label>
+                </div>
+            </div>
+        </fieldset>
+        <div class="form-actions">
+            <input type="hidden" name="id" value="{$data.id}" />
+            <button type="submit" class="btn btn-primary js-ajax-submit">{:L('UPDATE')}</button>
+            <a class="btn" href="{:U('Member/index')}">{:L('BACK')}</a>
+        </div>
+    </form>
+</div>
+<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>
