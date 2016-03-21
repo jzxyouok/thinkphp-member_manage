@@ -90,21 +90,34 @@ class MemberController extends AdminbaseController{
             $p_member = $this->member_model->where('id='.$member['pid'])->find();
             $data['relation'] = $p_member['relation'].','.$member['id'];
             $this->member_model->where('id='.$member['id'])->save($data);
-            $this->_updateRank($p_member['relation']);
+            $this->_updateRank($member['id'], $p_member['relation']);
         }else{
             $data['relation'] = '0,'.$member['id'];
             $this->member_model->where('id='.$member['id'])->save($data);
         }
     }
 
-    private function _updateRank($relation){
-        $relation = explode(',', $relation);
+    private function _updateRank($id, $p_relation){
+        $memberModel = M('member');
+        $member = $memberModel->find($id);
+        $relation = explode(',', $p_relation);
         array_shift($relation);
-        foreach ($relation as $item) {
-            $where['relation'] = array('like', '%'.$item.',%');
-            $where['rank'] = array('lt', 3);
-            $res[] = $this->member_model->where($where)->select();
+        if($member['rank'] == 1){
+            foreach ($relation as $item) {
+                $zj_where['relation'] = array('like', '0,'.$item.',%');
+                $zj_where['rank'] = array('lt', 3);
+                $zj_res[] = $this->member_model->where($zj_where)->select();
+                $jj_where['relation'] = array('like', '%'.$item.'%');
+                $jj_where['rank'] = array('lt', 3);
+                $jj_res[] = $this->member_model->where($jj_where)->select();
+            }
+            print_r($zj_res);
+            print_r($jj_res);
+
+        }elseif($member['rank'] == 2){
+
         }
+
     }
 
     /**
