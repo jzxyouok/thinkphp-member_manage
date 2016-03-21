@@ -1,0 +1,32 @@
+<admintpl file="header" />
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:U('Log/index')}">操作记录</a></li>
+    </ul>
+    <table class="table table-hover table-bordered">
+        <thead>
+        <tr>
+            <th width="30">ID</th>
+            <th width="80">{:L('HANDLE_USER')}</th>
+            <th width="120">{:L('TIME')}</th>
+            <th align="left">{:L('DESC')}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <foreach name="logs" item="vo">
+            <tr>
+                <td>{$vo.id}</td>
+                <td>{$vo.handle_user}</td>
+                <td><php>echo date('Y-m-d H:i:s',$vo['create_time']);</php></td>
+                <td>{$vo.desc}</td>
+            </tr>
+        </foreach>
+        </tbody>
+    </table>
+    <div class="pagination">{$page}</div>
+</div>
+<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

@@ -127,10 +127,9 @@ var GV = {
 					</div>
 				</div>
 				<div class="control-group">
-					<label class="control-label"><?php echo L('RID');?></label>
+					<label class="control-label"><?php echo L('RECOMMEND');?></label>
 					<div class="controls">
-						<input type="text" name="rid" value="" id="rid"/>
-						<span class="form-required">*</span>
+						<input type="text" name="pid" value="" id="pid"/>
 					</div>
 				</div>
 				<div class="control-group">
@@ -139,13 +138,13 @@ var GV = {
 						<textarea name="remark" rows="2" cols="20" id="remark" class="inputtext" style="height: 100px; width: 500px;"></textarea>
 					</div>
 				</div>
-				<div class="control-group">
-					<label class="control-label"><?php echo L('STATUS');?></label>
-					<div class="controls">
-						<label class="radio inline" for="active_true"><input type="radio" name="status" value="1" checked id="active_true" /><?php echo L('ENABLED');?></label>
-						<label class="radio inline" for="active_false"><input type="radio" name="status" value="0" id="active_false"><?php echo L('DISABLED');?></label>
-					</div>
-				</div>
+				<!--<div class="control-group">-->
+					<!--<label class="control-label"><?php echo L('STATUS');?></label>-->
+					<!--<div class="controls">-->
+						<!--<label class="radio inline" for="active_true"><input type="radio" name="status" value="1" checked id="active_true" /><?php echo L('ENABLED');?></label>-->
+						<!--<label class="radio inline" for="active_false"><input type="radio" name="status" value="0" id="active_false"><?php echo L('DISABLED');?></label>-->
+					<!--</div>-->
+				<!--</div>-->
 			</fieldset>
 			<div class="form-actions">
 				<button type="submit" class="btn btn-primary js-ajax-submit"><?php echo L('ADD');?></button>

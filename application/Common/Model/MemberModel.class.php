@@ -10,7 +10,6 @@ class MemberModel extends CommonModel{
         array('mobile', 'require', '手机号不能为空！', 1, 'regex', 3 ),
         array('mobile', 'number', '手机号格式不正确！！', 1, 'regex', 3 ),
         array('mobile', '', '手机号已存在！', 1, 'unique', 1 ),
-        array('rid', 'require', '推荐人会员ID不能为空！', 1, 'regex', 3 ),
     );
 
     // 自动完成
@@ -19,13 +18,6 @@ class MemberModel extends CommonModel{
         array('update_time','time',2,'function'),
         array('handle_user','_getLoginUser',3,'callback'),
     );
-
-    /**
-     * 生成会员ID
-     */
-    protected function _generateMemberID(){
-
-    }
 
     /**
      * 获取当前登陆用户（操作员）

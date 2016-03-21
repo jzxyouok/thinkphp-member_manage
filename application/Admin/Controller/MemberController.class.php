@@ -13,6 +13,7 @@ use Common\Controller\AdminbaseController;
 class MemberController extends AdminbaseController{
 
     protected $member_model;
+    protected $lastID;
 
     function _initialize() {
         parent::_initialize();
@@ -56,13 +57,53 @@ class MemberController extends AdminbaseController{
         if (IS_POST) {
             if ($this->member_model->create()) {
                 if ($this->member_model->add()!==false) {
+                    $this->_memberID();
+                    $this->_relation();exit;
+                    $this->handleLog('添加会员，状态：成功！');
                     $this->success("添加会员成功!",U("member/index"));
                 } else {
+                    $this->handleLog('添加会员，状态：失败！');
                     $this->error("添加失败！");
                 }
             } else {
                 $this->error($this->member_model->getError());
             }
+        }
+    }
+
+    /**
+     * 生成以8开头的8位会员ID
+     */
+    private function _memberID(){
+        $this->lastID = $this->member_model->getLastInsID();
+        $data['member_id'] = '8'.str_pad($this->lastID, 7, '0', STR_PAD_LEFT);
+        $this->member_model->where('id='.$this->lastID)->save($data);
+    }
+
+    /**
+     * 推荐关系生成
+     */
+    private function _relation(){
+        $member = $this->member_model->where('id='.$this->lastID)->find();
+        $data = array();
+        if(!empty($member['pid'])){
+            $p_member = $this->member_model->where('id='.$member['pid'])->find();
+            $data['relation'] = $p_member['relation'].','.$member['id'];
+            $this->member_model->where('id='.$member['id'])->save($data);
+            $this->_updateRank($p_member['relation']);
+        }else{
+            $data['relation'] = '0,'.$member['id'];
+            $this->member_model->where('id='.$member['id'])->save($data);
+        }
+    }
+
+    private function _updateRank($relation){
+        $relation = explode(',', $relation);
+        array_shift($relation);
+        foreach ($relation as $item) {
+            $where['relation'] = array('like', '%'.$item.',%');
+            $where['rank'] = array('lt', 3);
+            $res[] = $this->member_model->where($where)->select();
         }
     }
 
@@ -90,8 +131,10 @@ class MemberController extends AdminbaseController{
             $data = $this->member_model->create();
             if ($data) {
                 if ($this->member_model->save($data)!==false) {
+                    $this->handleLog('更新会员信息，状态：成功！');
                     $this->success("更新成功！", U('member/index'));
                 } else {
+                    $this->handleLog('更新会员信息，状态：失败！');
                     $this->error("更新失败！");
                 }
             } else {
@@ -101,28 +144,69 @@ class MemberController extends AdminbaseController{
     }
 
     /**
-     * 删除会员
+     * 会员详情
      */
-    public function delete() {
+    public function info() {
         $id = intval(I("get.id"));
-//        $role_user_model=M("Member");
-        $status = $this->member_model->delete($id);
-        if($status !== false){
-            $this->success('删除成功！',U('member/index'));
-        }else{
-            $this->error('删除失败！');
+        if ($id == 0) {
+            $id = intval(I("post.id"));
         }
-//        $count=$role_user_model->where("id=$id")->count();
-//        if($count){
-//            $this->error("该角色已经有用户！");
-//        }else{
-//            $status = $this->role_model->delete($id);
-//            if ($status!==false) {
-//                $this->success("删除成功！", U('Rbac/index'));
-//            } else {
-//                $this->error("删除失败！");
-//            }
-//        }
+        $data = $this->member_model->where(array("id" => $id))->find();
+        if (!$data) {
+            $this->error("该会员不存在！");
+        }
+        $this->assign("data", $data);
+        $this->display();
+    }
 
+    /**
+     * 支付信息
+     */
+    public function payment_record(){
+        $id = intval(I("get.id"));
+        if ($id == 0) {
+            $id = intval(I("post.id"));
+        }
+        $data = $this->member_model->where(array("id" => $id))->find();
+        if (!$data) {
+            $this->error("该会员不存在！");
+        }
+        $this->assign("data", $data);
+        $this->display();
+    }
+
+    /**
+     * 支付记录提交
+     */
+    public function payment_record_post(){
+        if (IS_POST) {
+            $data = $this->member_model->create();
+            if ($data) {
+                $data['rank'] = $data['pay_type'];
+                if ($this->member_model->save($data)!==false) {
+                    $this->handleLog('添加支付记录，状态：成功！');
+                    $this->success("添加成功！", U('member/index'));
+                } else {
+                    $this->handleLog('添加支付记录，状态：失败！');
+                    $this->error("添加失败！");
+                }
+            } else {
+                $this->error($this->member_model->getError());
+            }
+        }
+    }
+
+    /**
+     * 操作日志
+     * @param $log_data
+     * @return mixed
+     */
+    public function handleLog($log_data){
+        $log_model = M('log');
+        $data['handle_user'] = $_SESSION['name'];
+        $data['desc'] = $log_data;
+        $data['create_time'] = time();
+        $res = $log_model->add($data);
+        return $res;
     }
 }

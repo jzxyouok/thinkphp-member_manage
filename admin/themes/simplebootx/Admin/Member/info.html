@@ -1,0 +1,57 @@
+<admintpl file="header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:U('Member/index')}">{:L('ADMIN_MEMBER_INDEX')}</a></li>
+        <li class="active"><a href="">{:L('INFO')}</a></li>
+    </ul>
+    <fieldset>
+        <div class="control-group">
+            {:L('NAME')}：{$data.member_name}
+        </div>
+        <div class="control-group">
+            {:L('SEX')}：{$data.sex}
+        </div>
+        <div class="control-group">
+            {:L('AGE')}：{$data.age}
+        </div>
+        <div class="control-group">
+            {:L('MOBILE')}：{$data.mobile}
+        </div>
+        <div class="control-group">
+            {:L('OCCUPATION')}：{$data.occupation}
+        </div>
+        <div class="control-group">
+            {:L('AREA')}：{$data.area}
+        </div>
+        <div class="control-group">
+            {:L('WEIXIN')}：{$data.weixin}
+        </div>
+        <div class="control-group">
+            {:L('QQ')}：{$data.qq}
+        </div>
+        <div class="control-group">
+            {:L('EMAIL')}：{$data.email}
+        </div>
+        <div class="control-group">
+            {:L('RANK')}：
+            <if condition="$data.rank eq 1"> 卖咖
+                <elseif condition="$data.rank eq 2"/>资深卖咖
+                <elseif condition="$data.rank eq 3" /> 大咖
+                <else/>
+            </if>
+        </div>
+        <div class="control-group">
+            {:L('RECOMMEND')}：{$data.pid}
+        </div>
+        <div class="control-group">
+            {:L('REMARK')}：
+            <p style="width: 400px;word-wrap:break-word;">{$data.remark}</p>
+        </div>
+    </fieldset>
+    <a class="btn" href="{:U('Member/index')}">{:L('BACK')}</a>
+</div>
+<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

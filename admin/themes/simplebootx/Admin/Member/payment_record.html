@@ -1,0 +1,33 @@
+<admintpl file="header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <form class="form-horizontal js-ajax-form" action="{:U('Member/payment_record_post')}" method="post">
+        <div class="control-group">
+            {:L('NAME')}：<span>{$data.member_name}</span>
+        </div>
+        <div>
+            <label>{:L('PAY_INFO')}</label>
+            <div>
+                <select name="pay_type" id="pay_type">
+                    <option value="1" selected>599</option>
+                    <option value="2">1599</option>
+                </select>
+            </div>
+        </div>
+        <div class="control-group">
+            <label>{:L('REMARK')}</label>
+            <textarea name="remark" rows="2" cols="20" id="remark" class="inputtext" style="height: 50px; width: 205px;">{$data.remark}</textarea>
+        </div>
+        <div style="margin-top: 20px;text-align: center;">
+            <input type="hidden" name="id" value="{$data.id}" />
+            <input type="hidden" name="member_name" value="{$data.member_name}">
+            <input type="hidden" name="mobile" value="{$data.mobile}">
+            <input type="hidden" name="pid" value="{$data.pid}">
+            <button type="submit" class="btn btn-primary js-ajax-submit">{:L('SUBMIT')}</button>
+        </div>
+    </form>
+</div>
+<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

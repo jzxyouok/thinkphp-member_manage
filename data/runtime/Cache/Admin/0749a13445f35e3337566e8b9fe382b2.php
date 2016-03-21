@@ -67,23 +67,18 @@ var GV = {
 			<thead>
 			<tr>
 				<th width="30">ID</th>
-				<th align="left"><?php echo L('MEMBER_ID');?></th>
-				<th align="left"><?php echo L('NAME');?></th>
+				<th width="80"><?php echo L('MEMBER_ID');?></th>
+				<th width="100"><?php echo L('NAME');?></th>
 				<th width="30"><?php echo L('SEX');?></th>
 				<th width="30"><?php echo L('AGE');?></th>
-				<th align="left"><?php echo L('MOBILE');?></th>
-				<th align="left"><?php echo L('OCCUPATION');?></th>
-				<th align="left"><?php echo L('AREA');?></th>
-				<th align="left"><?php echo L('WEIXIN');?></th>
-				<th align="left"><?php echo L('QQ');?></th>
-				<th align="left"><?php echo L('EMAIL');?></th>
-				<th align="left"><?php echo L('RANK');?></th>
-				<th align="left"><?php echo L('RID');?></th>
+				<th width="100"><?php echo L('MOBILE');?></th>
+				<th width="50"><?php echo L('RANK');?></th>
+				<th width="100"><?php echo L('RECOMMEND');?></th>
+				<th width="60"><?php echo L('PAY_INFO');?></th>
 				<th align="left"><?php echo L('REMARK');?></th>
-				<th width="60" align="left"><?php echo L('STATUS');?></th>
-				<th align="left"><?php echo L('HANDLE_USER');?></th>
-				<th align="left"><?php echo L('HANDLE_TIME');?></th>
-				<th width="60"><?php echo L('ACTIONS');?></th>
+				<th width="60"><?php echo L('HANDLE_USER');?></th>
+				<th width="80"><?php echo L('HANDLE_TIME');?></th>
+				<th width="90"><?php echo L('ACTIONS');?></th>
 			</tr>
 			</thead>
 			<tbody>
@@ -94,28 +89,27 @@ var GV = {
 					<td><?php if($vo['sex'] == 1): ?>男<?php else: ?>女<?php endif; ?></td>
 					<td><?php echo ($vo["age"]); ?></td>
 					<td><?php echo ($vo["mobile"]); ?></td>
-					<td><?php echo ($vo["occupation"]); ?></td>
-					<td><?php echo ($vo["area"]); ?></td>
-					<td><?php echo ($vo["weixin"]); ?></td>
-					<td><?php echo ($vo["qq"]); ?></td>
-					<td><?php echo ($vo["email"]); ?></td>
 					<td>
-						<?php if($vo["rank"] == 1): ?>卖咖
-							<?php elseif($vo["rank"] == 2): ?>资深卖咖
-							<?php elseif($vo["rank"] == 3): ?>大咖<?php endif; ?>
+						<?php if($vo['rank'] == 1): ?>卖咖
+							<?php elseif($vo['rank'] == 2): ?>资深卖咖
+							<?php elseif($vo['rank'] == 3): ?>大咖
+							<?php else: endif; ?>
 					</td>
-					<td><?php echo ($vo["rid"]); ?></td>
+					<td><?php echo ($vo["pid"]); ?></td>
+					<td>
+						<?php if($vo['pay_type'] == 1): ?>599
+							<?php elseif($vo['pay_type'] == 2): ?>
+							1599
+							<?php else: endif; ?>
+					</td>
 					<td><?php echo ($vo["remark"]); ?></td>
-					<td>
-						<?php if($vo['status'] == 1): ?><font color="green">√</font>
-							<?php else: ?>
-							<font color="red">╳</font><?php endif; ?>
-					</td>
 					<td><?php echo ($vo["handle_user"]); ?></td>
 					<td><?php echo date('Y-m-d',$vo['update_time']); ?></td>
 					<td>
-						<a href="<?php echo U('Member/edit',array('id'=>$vo['id']));?>"><?php echo L('EDIT');?></a>|
-						<a class="js-ajax-delete" href="<?php echo U('Member/delete',array('id'=>$vo['id']));?>"><?php echo L('DELETE');?></a>
+						<a class="js-dialog" href="<?php echo U('Member/payment_record',array('id'=>$vo['id']));?>"><?php echo L('PAY');?></a>|
+						<a href="<?php echo U('Member/info',array('id'=>$vo['id']));?>"><?php echo L('INFO');?></a>|
+						<a href="<?php echo U('Member/edit',array('id'=>$vo['id']));?>"><?php echo L('EDIT');?></a>
+						<!--<a class="js-ajax-delete" href="<?php echo U('Member/delete',array('id'=>$vo['id']));?>"><?php echo L('DELETE');?></a>-->
 					</td>
 				</tr><?php endforeach; endif; ?>
 			</tbody>
