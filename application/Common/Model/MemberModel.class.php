@@ -15,7 +15,7 @@ class MemberModel extends CommonModel{
     // 自动完成
     protected $_auto = array(
         array('create_time','time',1,'function'),
-        array('update_time','time',2,'function'),
+        array('update_time','time',3,'function'),
         array('handle_user','_getLoginUser',3,'callback'),
     );
 
