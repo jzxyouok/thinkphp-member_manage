@@ -12,7 +12,7 @@
 				<option value="member_id">{:L('MEMBER_ID')}</option>
 				<option value="member_name">{:L('NAME')}</option>
 				<option value="mobile">{:L('MOBILE')}</option>
-				<option value="rid">{:L('RID')}</option>
+				<option value="pid">{:L('RECOMMEND')}</option>
 			</select>
 			{:L('KEYWORD')}
 			<input type="text" name="keywords" style="width: 200px;" value="" placeholder="请输入关键字...">
@@ -63,7 +63,7 @@
 					</td>
 					<td>{$vo.remark}</td>
 					<td>{$vo.handle_user}</td>
-					<td><php>echo date('Y-m-d',$vo['update_time']);</php></td>
+					<td><php>echo date('Y-m-d',$vo['create_time']);</php></td>
 					<td>
 						<a class="js-dialog" href="{:U('Member/payment_record',array('id'=>$vo['id']))}">{:L('PAY')}</a>|
 						<a href="{:U('Member/info',array('id'=>$vo['id']))}">{:L('INFO')}</a>|

@@ -57,7 +57,7 @@ var GV = {
 				<option value="member_id"><?php echo L('MEMBER_ID');?></option>
 				<option value="member_name"><?php echo L('NAME');?></option>
 				<option value="mobile"><?php echo L('MOBILE');?></option>
-				<option value="rid"><?php echo L('RID');?></option>
+				<option value="pid"><?php echo L('RECOMMEND');?></option>
 			</select>
 			<?php echo L('KEYWORD');?>
 			<input type="text" name="keywords" style="width: 200px;" value="" placeholder="请输入关键字...">
@@ -104,7 +104,7 @@ var GV = {
 					</td>
 					<td><?php echo ($vo["remark"]); ?></td>
 					<td><?php echo ($vo["handle_user"]); ?></td>
-					<td><?php echo date('Y-m-d',$vo['update_time']); ?></td>
+					<td><?php echo date('Y-m-d',$vo['create_time']); ?></td>
 					<td>
 						<a class="js-dialog" href="<?php echo U('Member/payment_record',array('id'=>$vo['id']));?>"><?php echo L('PAY');?></a>|
 						<a href="<?php echo U('Member/info',array('id'=>$vo['id']));?>"><?php echo L('INFO');?></a>|
