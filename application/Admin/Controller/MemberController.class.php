@@ -39,6 +39,13 @@ class MemberController extends AdminbaseController{
                 ->order(array("id" => "desc"))->select();
         }
 
+        foreach ($data as $key => $value) {
+            $res = $this->getMember($value['pid']);
+            $data[$key]['zj_num'] = $this->getZJNum($value['id']);
+            $data[$key]['jj_num'] = $this->getJJNum($value['id']);
+            $data[$key]['p_member_name'] = $res['member_name'];
+        }
+
         $this->assign("members", $data);
         $this->display();
     }
