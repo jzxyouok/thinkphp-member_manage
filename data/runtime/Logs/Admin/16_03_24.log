@@ -1,0 +1,270 @@
+[ 2016-03-24T15:55:12+08:00 ] 127.0.0.1 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `cmf_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_role_user` [ RunTime:0.0060s ]
+SQL: SELECT `role_id` FROM cmf_role_user a INNER JOIN cmf_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0010s ]
+SQL: UPDATE `cmf_users` SET `user_login`='admin',`user_pass`='###e8fd9b876db9e39b1643eb29ab9559ec',`user_nicename`='admin',`user_email`='admin@localhost.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='127.0.0.1',`last_login_time`='2016-03-24 15:55:12',`create_time`='2016-03-18 05:14:43',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '1' [ RunTime:0.0000s ]
+
+[ 2016-03-24T15:57:16+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=106
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=106 ) LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-03-24T15:57:24+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=107
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=107 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-24T15:57:33+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=106
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=106 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-24T15:57:58+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=106
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=106 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-24T16:28:07+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=payment_record&id=124
+ERR: Think\Controller:getZJNum方法不存在！
+
+[ 2016-03-24T16:36:18+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=110
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=110 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-24T16:36:48+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=110
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=110 ) LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-03-24T16:36:50+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=110
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=110 ) LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-03-24T16:38:45+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=110
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=110 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-24T16:40:16+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=124
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=124 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-24T16:40:48+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=124
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=124 ) LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-03-24T16:43:14+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=110
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=110 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-24T16:43:19+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=106
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=106 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-24T16:43:25+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=106
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=106 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-24T16:44:02+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=106
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=106 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-24T16:46:12+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=106
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=106 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-24T16:46:20+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=106
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=106 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-24T16:46:21+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=edit_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: UPDATE `cmf_member` SET `member_name`='sadfaswws',`sex`='1',`age`='0',`mobile`='436546547457',`occupation`='',`area`='',`weixin`='',`qq`='',`email`='',`pid`='106',`remark`='',`update_time`='1458809181',`handle_user`='admin' WHERE `id` = 124 [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=124 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_log` [ RunTime:0.0150s ]
+SQL: INSERT INTO `cmf_log` (`handle_user`,`desc`,`create_time`) VALUES ('admin','更新会员信息，会员ID：124，状态：成功！','1458809181') [ RunTime:0.0020s ]
+
+[ 2016-03-24T16:46:39+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=edit_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: UPDATE `cmf_member` SET `member_name`='sadfaswws',`sex`='1',`age`='0',`mobile`='436546547457',`occupation`='',`area`='',`weixin`='',`qq`='',`email`='',`pid`='106',`remark`='',`update_time`='1458809199',`handle_user`='admin' WHERE `id` = 124 [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=124 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `cmf_log` (`handle_user`,`desc`,`create_time`) VALUES ('admin','更新会员信息，会员ID：124，状态：成功！','1458809199') [ RunTime:0.0000s ]
+
+[ 2016-03-24T16:55:03+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=106
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0240s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=106 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-24T16:55:05+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=106
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=106 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-24T16:55:06+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=edit_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: UPDATE `cmf_member` SET `member_name`='sadfaswws',`sex`='1',`age`='0',`mobile`='436546547457',`occupation`='',`area`='',`weixin`='',`qq`='',`email`='',`pid`='106',`remark`='',`update_time`='1458809706',`handle_user`='admin' WHERE `id` = 124 [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=124 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `cmf_log` (`handle_user`,`desc`,`create_time`) VALUES ('admin','更新会员信息，会员ID：124，状态：成功！','1458809706') [ RunTime:0.0010s ]
+
+[ 2016-03-24T16:55:27+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=107
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=107 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-24T16:55:28+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=107
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=107 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-24T16:55:57+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=edit_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+

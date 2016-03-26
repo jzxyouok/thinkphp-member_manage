@@ -9,7 +9,7 @@
 		<form class="well form-search" method="post" action="{:U('Member/index')}">
 			{:L('SEARCH_TYPE')}
 			<select name="search_type" id="search_type" style="width: 100px;">
-				<option value="member_id">{:L('MEMBER_ID')}</option>
+				<!--<option value="member_id">{:L('MEMBER_ID')}</option>-->
 				<option value="member_name">{:L('NAME')}</option>
 				<option value="mobile">{:L('MOBILE')}</option>
 				<option value="pid">{:L('RECOMMEND')}</option>
@@ -22,25 +22,25 @@
 			<thead>
 			<tr>
 				<th width="30">ID</th>
-				<th width="80">{:L('MEMBER_ID')}</th>
 				<th width="100">{:L('NAME')}</th>
 				<th width="30">{:L('SEX')}</th>
 				<th width="30">{:L('AGE')}</th>
 				<th width="100">{:L('MOBILE')}</th>
 				<th width="50">{:L('RANK')}</th>
 				<th width="100">{:L('RECOMMEND')}</th>
-				<th width="60">{:L('PAY_INFO')}</th>
+				<th width="100">{:L('RECOMMEND_NAME')}</th>
+				<th width="100">{:L('ZJ_NUM')}</th>
+				<th width="100">{:L('JJ_NUM')}</th>
 				<th align="left">{:L('REMARK')}</th>
 				<th width="60">{:L('HANDLE_USER')}</th>
-				<th width="80">{:L('HANDLE_TIME')}</th>
-				<th width="90">{:L('ACTIONS')}</th>
+				<th width="130">{:L('CREATE_TIME')}</th>
+				<th width="100">{:L('ACTIONS')}</th>
 			</tr>
 			</thead>
 			<tbody>
 			<foreach name="members" item="vo">
 				<tr>
 					<td>{$vo.id}</td>
-					<td>{$vo.member_id}</td>
 					<td>{$vo.member_name}</td>
 					<td><if condition="$vo['sex'] == 1">男<else />女</if></td>
 					<td>{$vo.age}</td>
@@ -53,22 +53,16 @@
 						</if>
 					</td>
 					<td>{$vo.pid}</td>
-					<td>
-						<if condition="$vo['pay_type'] eq 1">
-							599
-							<elseif condition="$vo['pay_type'] eq 2" />
-							1599
-							<else/>
-						</if>
-					</td>
+					<td>{$vo.p_member_name}</td>
+					<td>{$vo.zj_num}</td>
+					<td>{$vo.jj_num}</td>
 					<td>{$vo.remark}</td>
 					<td>{$vo.handle_user}</td>
-					<td><php>echo date('Y-m-d',$vo['create_time']);</php></td>
+					<td><php>echo date('Y-m-d h:i:s',$vo['create_time']);</php></td>
 					<td>
-						<a class="js-dialog" href="{:U('Member/payment_record',array('id'=>$vo['id']))}">{:L('PAY')}</a>|
-						<a href="{:U('Member/info',array('id'=>$vo['id']))}">{:L('INFO')}</a>|
+						<a class="js-dialog" href="{:U('Member/payment_record',array('id'=>$vo['id']))}">{:L('PAY')}</a> |
+						<a href="{:U('Member/info',array('id'=>$vo['id']))}">{:L('INFO')}</a> |
 						<a href="{:U('Member/edit',array('id'=>$vo['id']))}">{:L('EDIT')}</a>
-						<!--<a class="js-ajax-delete" href="{:U('Member/delete',array('id'=>$vo['id']))}">{:L('DELETE')}</a>-->
 					</td>
 				</tr>
 			</foreach>

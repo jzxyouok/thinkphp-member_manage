@@ -15,7 +15,7 @@ class MainController extends AdminbaseController {
     			L('OPERATING_ENVIRONMENT') => $_SERVER["SERVER_SOFTWARE"],
     			L('PHP_RUN_MODE') => php_sapi_name(),
     			L('MYSQL_VERSION') =>$mysql,
-    			L('PROGRAM_VERSION') => SIMPLEWIND_CMF_VERSION . "&nbsp;&nbsp;&nbsp; [<a href='http://www.thinkcmf.com' target='_blank'>ThinkCMF</a>]",
+    			L('PROGRAM_VERSION') => SIMPLEWIND_CMF_VERSION,
     			L('UPLOAD_MAX_FILESIZE') => ini_get('upload_max_filesize'),
     			L('MAX_EXECUTION_TIME') => ini_get('max_execution_time') . "s",
     			L('DISK_FREE_SPACE') => round((@disk_free_space(".") / (1024 * 1024)), 2) . 'M',

@@ -47,42 +47,34 @@ var GV = {
 </head>
 <body>
 <div class="wrap js-check-wrap">
-    <form class="form-horizontal js-ajax-form" action="<?php echo U('Member/payment_record_post');?>" method="post">
-        <div>
-            <?php echo L('MEMBER_ID');?>：<span><?php echo ($data["id"]); ?></span>
-        </div>
-        <div>
-            <?php echo L('NAME');?>：<span><?php echo ($data["member_name"]); ?></span>
-        </div>
-        <div>
-            <label></label>
-            <div>
-                <label>上线人数：<?php echo ($relation["sx"]); ?></label>
-                <label>直接下线：<?php echo ($relation["zj"]); ?></label>
-                <label>间接下线：<?php echo ($relation["jj"]); ?></label>
-            </div>
-        </div>
-        <div>
-            <label><?php echo L('PAY_INFO');?></label>
-            <div>
-                <select name="pay_type" id="pay_type">
-                    <option value="1" selected>599</option>
-                    <option value="2">1599</option>
-                </select>
-            </div>
-        </div>
-        <div class="control-group">
-            <label><?php echo L('REMARK');?></label>
-            <textarea name="remark" rows="2" cols="20" id="remark" class="inputtext" style="height: 50px; width: 205px;"><?php echo ($data["remark"]); ?></textarea>
-        </div>
-        <div style="margin-top: 20px;text-align: center;">
-            <input type="hidden" name="id" value="<?php echo ($data["id"]); ?>" />
-            <input type="hidden" name="member_name" value="<?php echo ($data["member_name"]); ?>">
-            <input type="hidden" name="mobile" value="<?php echo ($data["mobile"]); ?>">
-            <input type="hidden" name="pid" value="<?php echo ($data["pid"]); ?>">
-            <button type="submit" class="btn btn-primary js-ajax-submit"><?php echo L('SUBMIT');?></button>
-        </div>
-    </form>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="<?php echo U('Payment/index');?>">支付记录</a></li>
+    </ul>
+    <table class="table table-hover table-bordered">
+        <thead>
+        <tr>
+            <th width="30">ID</th>
+            <th width="80"><?php echo L('HANDLE_USER');?></th>
+            <th width="120"><?php echo L('TIME');?></th>
+            <th width="120"><?php echo L('MEMBER_ID');?></th>
+            <th width="120"><?php echo L('MEMBER_NAME');?></th>
+            <th width="120"><?php echo L('AMOUNT');?></th>
+            <th align="left"><?php echo L('REMARK');?></th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php if(is_array($payment_logs)): foreach($payment_logs as $key=>$vo): ?><tr>
+                <td><?php echo ($vo["id"]); ?></td>
+                <td><?php echo ($vo["handle_user"]); ?></td>
+                <td><?php echo date('Y-m-d H:i:s',$vo['create_time']); ?></td>
+                <td><?php echo ($vo["member_id"]); ?></td>
+                <td><?php echo ($vo["member_name"]); ?></td>
+                <td><?php echo ($vo["amount"]); ?></td>
+                <td><?php echo ($vo["remark"]); ?></td>
+            </tr><?php endforeach; endif; ?>
+        </tbody>
+    </table>
+    <div class="pagination"><?php echo ($page); ?></div>
 </div>
 <script src="/public/js/common.js"></script>
 </body>

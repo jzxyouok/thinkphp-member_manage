@@ -54,7 +54,7 @@ var GV = {
 		<form class="well form-search" method="post" action="<?php echo U('Member/index');?>">
 			<?php echo L('SEARCH_TYPE');?>
 			<select name="search_type" id="search_type" style="width: 100px;">
-				<option value="member_id"><?php echo L('MEMBER_ID');?></option>
+				<!--<option value="member_id"><?php echo L('MEMBER_ID');?></option>-->
 				<option value="member_name"><?php echo L('NAME');?></option>
 				<option value="mobile"><?php echo L('MOBILE');?></option>
 				<option value="pid"><?php echo L('RECOMMEND');?></option>
@@ -67,24 +67,24 @@ var GV = {
 			<thead>
 			<tr>
 				<th width="30">ID</th>
-				<th width="80"><?php echo L('MEMBER_ID');?></th>
 				<th width="100"><?php echo L('NAME');?></th>
 				<th width="30"><?php echo L('SEX');?></th>
 				<th width="30"><?php echo L('AGE');?></th>
 				<th width="100"><?php echo L('MOBILE');?></th>
 				<th width="50"><?php echo L('RANK');?></th>
 				<th width="100"><?php echo L('RECOMMEND');?></th>
-				<th width="60"><?php echo L('PAY_INFO');?></th>
+				<th width="100"><?php echo L('RECOMMEND_NAME');?></th>
+				<th width="100"><?php echo L('ZJ_NUM');?></th>
+				<th width="100"><?php echo L('JJ_NUM');?></th>
 				<th align="left"><?php echo L('REMARK');?></th>
 				<th width="60"><?php echo L('HANDLE_USER');?></th>
-				<th width="80"><?php echo L('HANDLE_TIME');?></th>
-				<th width="90"><?php echo L('ACTIONS');?></th>
+				<th width="130"><?php echo L('CREATE_TIME');?></th>
+				<th width="100"><?php echo L('ACTIONS');?></th>
 			</tr>
 			</thead>
 			<tbody>
 			<?php if(is_array($members)): foreach($members as $key=>$vo): ?><tr>
 					<td><?php echo ($vo["id"]); ?></td>
-					<td><?php echo ($vo["member_id"]); ?></td>
 					<td><?php echo ($vo["member_name"]); ?></td>
 					<td><?php if($vo['sex'] == 1): ?>男<?php else: ?>女<?php endif; ?></td>
 					<td><?php echo ($vo["age"]); ?></td>
@@ -96,20 +96,16 @@ var GV = {
 							<?php else: endif; ?>
 					</td>
 					<td><?php echo ($vo["pid"]); ?></td>
-					<td>
-						<?php if($vo['pay_type'] == 1): ?>599
-							<?php elseif($vo['pay_type'] == 2): ?>
-							1599
-							<?php else: endif; ?>
-					</td>
+					<td><?php echo ($vo["p_member_name"]); ?></td>
+					<td><?php echo ($vo["zj_num"]); ?></td>
+					<td><?php echo ($vo["jj_num"]); ?></td>
 					<td><?php echo ($vo["remark"]); ?></td>
 					<td><?php echo ($vo["handle_user"]); ?></td>
-					<td><?php echo date('Y-m-d',$vo['create_time']); ?></td>
+					<td><?php echo date('Y-m-d h:i:s',$vo['create_time']); ?></td>
 					<td>
-						<a class="js-dialog" href="<?php echo U('Member/payment_record',array('id'=>$vo['id']));?>"><?php echo L('PAY');?></a>|
-						<a href="<?php echo U('Member/info',array('id'=>$vo['id']));?>"><?php echo L('INFO');?></a>|
+						<a class="js-dialog" href="<?php echo U('Member/payment_record',array('id'=>$vo['id']));?>"><?php echo L('PAY');?></a> |
+						<a href="<?php echo U('Member/info',array('id'=>$vo['id']));?>"><?php echo L('INFO');?></a> |
 						<a href="<?php echo U('Member/edit',array('id'=>$vo['id']));?>"><?php echo L('EDIT');?></a>
-						<!--<a class="js-ajax-delete" href="<?php echo U('Member/delete',array('id'=>$vo['id']));?>"><?php echo L('DELETE');?></a>-->
 					</td>
 				</tr><?php endforeach; endif; ?>
 			</tbody>

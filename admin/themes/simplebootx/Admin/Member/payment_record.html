@@ -3,8 +3,19 @@
 <body>
 <div class="wrap js-check-wrap">
     <form class="form-horizontal js-ajax-form" action="{:U('Member/payment_record_post')}" method="post">
-        <div class="control-group">
+        <div>
+            {:L('MEMBER_ID')}：<span>{$data.id}</span>
+        </div>
+        <div>
             {:L('NAME')}：<span>{$data.member_name}</span>
+        </div>
+        <div>
+            <label></label>
+            <div>
+                <label>上线人数：{$relation.sx}</label>
+                <label>直接下线：{$relation.zj}</label>
+                <label>间接下线：{$relation.jj}</label>
+            </div>
         </div>
         <div>
             <label>{:L('PAY_INFO')}</label>

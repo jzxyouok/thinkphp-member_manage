@@ -32,7 +32,7 @@
 	</head>
 <body>
 	<div class="wrap">
-		<h1><a href="">ThinkCMF <?php echo L('ADMIN_CENTER');?></a></h1>
+		<h1><a href="">后 台 管 理</a></h1>
 		<form method="post" name="login" action="<?php echo U('public/dologin');?>" autoComplete="off" class="js-ajax-form">
 			<div class="login">
 				<ul>

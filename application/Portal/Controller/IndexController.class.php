@@ -15,7 +15,8 @@ class IndexController extends HomebaseController {
 	
     //首页
 	public function index() {
-    	$this->display(":index");
+		header("Location: http://huiyuan.ali.haleysite.com/admin");
+//    	$this->display(":index");
     }
 
 }

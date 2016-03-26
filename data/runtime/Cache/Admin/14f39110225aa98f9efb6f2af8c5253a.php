@@ -58,8 +58,8 @@ li {
 <body>
 	<div class="wrap">
 		<div id="home_toptip"></div>
-		<h4 class="well"><?php echo L('SYSTEM_NOTIFICATIONS');?></h4>
-		<div class="home_info">
+		<h4 class="well" style="display: none;"><?php echo L('SYSTEM_NOTIFICATIONS');?></h4>
+		<div class="home_info" style="display: none;">
 			<ul id="thinkcmf_notices">
 				<li><img src="/admin/themes/simplebootx/Public/assets/images/loading.gif"style="vertical-align: middle;" /><span style="display: inline-block; vertical-align: middle;">加载中...</span></li>
 			</ul>
@@ -70,16 +70,16 @@ li {
 				<?php if(is_array($server_info)): $i = 0; $__LIST__ = $server_info;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li><em><?php echo ($key); ?></em> <span><?php echo ($vo); ?></span></li><?php endforeach; endif; else: echo "" ;endif; ?>
 			</ul>
 		</div>
-		<h4 class="well"><?php echo L('INITIATE_TEAM');?></h4>
-		<div class="home_info" id="home_devteam">
+		<h4 class="well" style="display: none;"><?php echo L('INITIATE_TEAM');?></h4>
+		<div class="home_info" id="home_devteam" style="display: none;">
 			<ul>
 				<li><em>ThinkCMF</em> <a href="http://www.thinkcmf.com" target="_blank">www.thinkcmf.com</a></li>
 				<li><em><?php echo L('TEAM_MEMBERS');?></em> <span>Dean,Sam,Tuolaji,Smile,Codefans,睡不醒的猪,Jack,日本那只猫</span></li>
 				<li><em><?php echo L('CONTACT_EMAIL');?></em> <span>cmf@simplewind.net</span></li>
 			</ul>
 		</div>
-		<h4 class="well"><?php echo L('CONTRIBUTORS');?></h4>
-		<div class="">
+		<h4 class="well" style="display: none;"><?php echo L('CONTRIBUTORS');?></h4>
+		<div class="" style="display: none;">
 			<ul class="inline" style="margin-left: 25px;">
 				<li>Kin Ho</li>
 				<li><a href="http://wzx.thinkcmf.com" target="_blank">Powerless</a></li>

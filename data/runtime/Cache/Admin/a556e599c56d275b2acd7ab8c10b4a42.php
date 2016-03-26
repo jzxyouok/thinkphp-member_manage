@@ -91,8 +91,9 @@ var GV = {
             <div class="control-group">
                 <label class="control-label"><?php echo L('AREA');?></label>
                 <div class="controls">
-                    <input type="text" name="area" value="<?php echo ($data["area"]); ?>" id="area"/>
-                    <span class="form-required"></span>
+                    <select onchange="" id="province" name="province" class="select_t"></select>
+                    <select class="select_t" id="city" name="city"></select>
+                    <select class="select_t" id="area" name="area"></select>
                 </div>
             </div>
             <div class="control-group">
@@ -130,7 +131,9 @@ var GV = {
             <div class="control-group">
                 <label class="control-label"><?php echo L('RECOMMEND');?></label>
                 <div class="controls">
+                    <input type="hidden" name="old_pid" value="<?php echo ($data["pid"]); ?>">
                     <input type="text" name="pid" value="<?php echo ($data["pid"]); ?>" id="pid"/>
+                    <div id="msg"></div>
                 </div>
             </div>
             <div class="control-group">
@@ -139,13 +142,6 @@ var GV = {
                     <textarea name="remark" rows="2" cols="20" id="remark" class="inputtext" style="height: 100px; width: 500px;"><?php echo ($data["remark"]); ?></textarea>
                 </div>
             </div>
-            <!--<div class="control-group">-->
-                <!--<label class="control-label"><?php echo L('STATUS');?></label>-->
-                <!--<div class="controls">-->
-                    <!--<label class="radio inline" for="active_true"><input type="radio" name="status" value="1" checked id="active_true" /><?php echo L('ENABLED');?></label>-->
-                    <!--<label class="radio inline" for="active_false"><input type="radio" name="status" value="0" id="active_false"><?php echo L('DISABLED');?></label>-->
-                <!--</div>-->
-            <!--</div>-->
         </fieldset>
         <div class="form-actions">
             <input type="hidden" name="id" value="<?php echo ($data["id"]); ?>" />
@@ -155,5 +151,34 @@ var GV = {
     </form>
 </div>
 <script src="/public/js/common.js"></script>
+<script src="/public/js/pcasunzip.js"></script>
+<script>
+    // 地区三级联动
+    $(document).ready(function() {
+        new PCAS("province","city","area", "<?php echo ($data["province"]); ?>", "<?php echo ($data["city"]); ?>", "<?php echo ($data["area"]); ?>");
+    });
+
+    $("#pid").blur(function(){
+        var $this = $(this);
+        var id = $this.val();
+        if(id != ''){
+            $.ajax({
+                type: "GET",
+                url: "<?php echo U('Member/getAjaxMember');?>",
+                data: {"id": id},
+                dataType: "json",
+                success: function(data){
+                    if(data == 2){
+                        $("#msg").html('<span style="color: red;">该推荐人不存在，请确认推荐人ID是否填写错误！</span>');
+                    }else{
+                        $("#msg").html('<span style="color: green;">推荐人ID：'+data.member_id+'，推荐人姓名：'+data.member_name+'，推荐人手机：'+data.member_mobile+'</span>');
+                    }
+                }
+            });
+        }else{
+            $("#msg").html('');
+        }
+    });
+</script>
 </body>
 </html>
