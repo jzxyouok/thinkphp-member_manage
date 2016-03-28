@@ -63,10 +63,7 @@ class MemberController extends AdminbaseController{
     public function add_post() {
         if (IS_POST) {
             if ($this->member_model->create()) {
-                $this->member_model->area = I('post.province').','.I('post.city').','.I('post.area');
-                $p_member = $this->getMember(I('post.pid'));
-                $this->member_model->p_member_name = $p_member['member_name'] ?: '';
-
+                $this->member_model->area = I('post.province') ? I('post.province').','.I('post.city').','.I('post.area') : '';
                 if ($this->member_model->add()!==false) {
                     $this->_memberID();
                     $this->_relation();
@@ -186,7 +183,7 @@ class MemberController extends AdminbaseController{
         if (IS_POST) {
             $data = $this->member_model->create();
             if ($data) {
-                $data['area'] = I('post.province').','.I('post.city').','.I('post.area');
+                $data['area'] = I('post.province') ? I('post.province').','.I('post.city').','.I('post.area') : '';
                 if ($this->member_model->save($data)!==false) {
                     $this->_changeRelation($data['id']);
 
@@ -286,6 +283,7 @@ class MemberController extends AdminbaseController{
                 $floor_3[] = $res_3;
             }
         }
+
         foreach($floor_3 as $item_4){
             $res_4 = $this->member_model->where('pid='.$item_4['id'])->find();
             if($res_4){

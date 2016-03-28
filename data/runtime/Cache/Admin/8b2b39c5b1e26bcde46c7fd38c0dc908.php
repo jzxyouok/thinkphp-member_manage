@@ -153,10 +153,12 @@ var GV = {
         <?php if(!empty($floor_3)){ ?>
         <tr class="floor-3">
             <td nowrap="nowrap">
-                <!--<div class="border-2">-->
-                    <!-- -->
-                <!--</div>-->
-                <?php if(is_array($floor_3)): foreach($floor_3 as $key=>$item_3): ?><span class="bg-3"><?php echo ($item_3["member_name"]); ?></span><?php endforeach; endif; ?>
+                <?php if(is_array($floor_3)): foreach($floor_3 as $k=>$item_3): if($floor_3[k]['pid'] == $floor_2[k]['id']): ?><div class="border-2">
+                            <span class="bg-2"><?php echo $floor_2[$k]['member_name']; ?>：</span>
+                            <?php if(is_array($floor_3)): foreach($floor_3 as $key=>$item_3): ?><span class="bg-3"><?php echo ($item_3["member_name"]); ?></span><?php endforeach; endif; ?>
+                        </div>
+                    <?php else: ?>
+                        <?php if(is_array($floor_3)): foreach($floor_3 as $key=>$item_3): ?><span class="bg-3"><?php echo ($item_3["member_name"]); ?></span><?php endforeach; endif; endif; endforeach; endif; ?>
             </td>
         </tr>
         <?php } ?>
@@ -165,10 +167,12 @@ var GV = {
         <?php if(!empty($floor_4)){ ?>
         <tr class="floor-4">
             <td nowrap="nowrap">
-                <!--<div class="border-3">-->
-                <!-- -->
-                <!--</div>-->
-                <?php if(is_array($floor_4)): foreach($floor_4 as $key=>$item_4): ?><span class="bg-4"><?php echo ($item_4["member_name"]); ?></span><?php endforeach; endif; ?>
+                <?php if(is_array($floor_4)): foreach($floor_4 as $k=>$item_4): if($floor_4[k]['pid'] == $floor_3[k]['id']): ?><div class="border-3">
+                            <span class="bg-3"><?php echo $floor_3[$k]['member_name']; ?></span>
+                            <?php if(is_array($floor_4)): foreach($floor_4 as $key=>$item_4): ?><span class="bg-4"><?php echo ($item_4["member_name"]); ?></span><?php endforeach; endif; ?>
+                        </div>
+                    <?php else: ?>
+                        <?php if(is_array($floor_4)): foreach($floor_4 as $key=>$item_4): ?><span class="bg-4"><?php echo ($item_4["member_name"]); ?></span><?php endforeach; endif; endif; endforeach; endif; ?>
             </td>
         </tr>
         <?php } ?>
@@ -180,7 +184,12 @@ var GV = {
                 <!--<div class="border-4">-->
                 <!-- -->
                 <!--</div>-->
-                <?php if(is_array($floor_5)): foreach($floor_5 as $key=>$item_5): ?><span class="bg-5"><?php echo ($item_5["member_name"]); ?></span><?php endforeach; endif; ?>
+                <?php if(is_array($floor_5)): foreach($floor_5 as $k=>$item_5): if($floor_5[k]['pid'] == $floor_4[k]['id']): ?><div class="border-4">
+                            <span class="bg-4"><?php echo $floor_3[$k]['member_name']; ?></span>
+                            <?php if(is_array($floor_5)): foreach($floor_5 as $key=>$item_5): ?><span class="bg-5"><?php echo ($item_4["member_name"]); ?></span><?php endforeach; endif; ?>
+                        </div>
+                    <?php else: ?>
+                        <?php if(is_array($floor_5)): foreach($floor_5 as $key=>$item_5): ?><span class="bg-5"><?php echo ($item_5["member_name"]); ?></span><?php endforeach; endif; endif; endforeach; endif; ?>
             </td>
         </tr>
         <?php } ?>
