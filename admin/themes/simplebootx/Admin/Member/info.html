@@ -113,11 +113,19 @@
         <php>if(!empty($floor_3)){</php>
         <tr class="floor-3">
             <td nowrap="nowrap">
-                <!--<div class="border-2">-->
-                    <!-- -->
-                <!--</div>-->
-                <foreach name="floor_3" item="item_3">
-                    <span class="bg-3">{$item_3.member_name}</span>
+                <foreach name="floor_3" item="item_3" key="k">
+                    <if condition="$floor_3[k]['pid'] eq $floor_2[k]['id']">
+                        <div class="border-2">
+                            <span class="bg-2"><php>echo $floor_2[$k]['member_name'];</php></span>
+                            <foreach name="floor_3" item="item_3">
+                                <span class="bg-3">{$item_3.member_name}</span>
+                            </foreach>
+                        </div>
+                    <else/>
+                        <foreach name="floor_3" item="item_3">
+                            <span class="bg-3">{$item_3.member_name}</span>
+                        </foreach>
+                    </if>
                 </foreach>
             </td>
         </tr>
@@ -127,11 +135,19 @@
         <php>if(!empty($floor_4)){</php>
         <tr class="floor-4">
             <td nowrap="nowrap">
-                <!--<div class="border-3">-->
-                <!-- -->
-                <!--</div>-->
-                <foreach name="floor_4" item="item_4">
-                    <span class="bg-4">{$item_4.member_name}</span>
+                <foreach name="floor_4" item="item_4" key="k">
+                    <if condition="$floor_4[k]['pid'] eq $floor_3[k]['id']">
+                        <div class="border-3">
+                            <span class="bg-3"><php>echo $floor_3[$k]['member_name'];</php></span>
+                            <foreach name="floor_4" item="item_4">
+                                <span class="bg-4">{$item_4.member_name}</span>
+                            </foreach>
+                        </div>
+                    <else/>
+                        <foreach name="floor_4" item="item_4">
+                            <span class="bg-4">{$item_4.member_name}</span>
+                        </foreach>
+                    </if>
                 </foreach>
             </td>
         </tr>
@@ -144,8 +160,19 @@
                 <!--<div class="border-4">-->
                 <!-- -->
                 <!--</div>-->
-                <foreach name="floor_5" item="item_5">
-                    <span class="bg-5">{$item_5.member_name}</span>
+                <foreach name="floor_5" item="item_5" key="k">
+                    <if condition="$floor_5[k]['pid'] eq $floor_4[k]['id']">
+                        <div class="border-4">
+                            <span class="bg-4"><php>echo $floor_3[$k]['member_name'];</php></span>
+                            <foreach name="floor_5" item="item_5">
+                                <span class="bg-5">{$item_4.member_name}</span>
+                            </foreach>
+                        </div>
+                    <else/>
+                        <foreach name="floor_5" item="item_5">
+                            <span class="bg-5">{$item_5.member_name}</span>
+                        </foreach>
+                    </if>
                 </foreach>
             </td>
         </tr>
