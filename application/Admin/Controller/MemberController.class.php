@@ -64,9 +64,6 @@ class MemberController extends AdminbaseController{
         if (IS_POST) {
             if ($this->member_model->create()) {
                 $this->member_model->area = I('post.province').','.I('post.city').','.I('post.area');
-                $p_member = $this->getMember(I('post.pid'));
-                $this->member_model->p_member_name = $p_member['member_name'] ?: '';
-
                 if ($this->member_model->add()!==false) {
                     $this->_memberID();
                     $this->_relation();
