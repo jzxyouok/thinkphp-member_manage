@@ -53,138 +53,89 @@ var GV = {
     </ul>
     会员信息：
     <table class="table table-hover table-bordered">
-        <thead>
         <tr>
-            <th width="30">ID</th>
-            <!--<th width="80"><?php echo L('MEMBER_ID');?></th>-->
-            <th width="100"><?php echo L('NAME');?></th>
-            <th width="30"><?php echo L('SEX');?></th>
-            <th width="30"><?php echo L('AGE');?></th>
-            <th width="100"><?php echo L('MOBILE');?></th>
-            <th width="100"><?php echo L('OCCUPATION');?></th>
-            <th align="left"><?php echo L('AREA');?></th>
-            <th width="100"><?php echo L('WEIXIN');?></th>
-            <th width="100"><?php echo L('QQ');?></th>
-            <th align="left"><?php echo L('EMAIL');?></th>
-            <th width="50"><?php echo L('RANK');?></th>
-            <th width="100"><?php echo L('RECOMMEND');?></th>
-            <th width="60"><?php echo L('PAY_INFO');?></th>
-            <th align="left"><?php echo L('REMARK');?></th>
-            <th width="60"><?php echo L('HANDLE_USER');?></th>
-            <th width="130"><?php echo L('CREATE_TIME');?></th>
+            <td width="100" style="text-align: right;font-weight: bold;">ID：</td>
+            <td width="150"><?php echo ($data["id"]); ?></td>
+            <td width="100" style="text-align: right;font-weight: bold;"><?php echo L('RECOMMEND');?>：</td>
+            <td><?php echo ($data["pid"]); ?></td>
         </tr>
-        </thead>
-        <tbody>
         <tr>
-            <td><?php echo ($data["id"]); ?></td>
-            <!--<td><?php echo ($vo["member_id"]); ?></td>-->
+            <td width="100" style="text-align: right;font-weight: bold;"><?php echo L('NAME');?>：</td>
             <td><?php echo ($data["member_name"]); ?></td>
+            <td width="100" style="text-align: right;font-weight: bold;"><?php echo L('RECOMMEND_NAME');?>：</td>
+            <td><?php echo ($data["p_member_name"]); ?></td>
+        </tr>
+        <tr>
+            <td width="100" style="text-align: right;font-weight: bold;"><?php echo L('SEX');?>：</td>
             <td><?php if($data['sex'] == 1): ?>男<?php else: ?>女<?php endif; ?></td>
-            <td><?php echo ($data["age"]); ?></td>
-            <td><?php echo ($data["mobile"]); ?></td>
-            <td><?php echo ($data["occupation"]); ?></td>
-            <td><?php echo ($data["area"]); ?></td>
-            <td><?php echo ($data["weixin"]); ?></td>
+            <td width="100" style="text-align: right;font-weight: bold;"><?php echo L('QQ');?>：</td>
             <td><?php echo ($data["qq"]); ?></td>
+        </tr>
+        <tr>
+            <td width="100" style="text-align: right;font-weight: bold;"><?php echo L('AGE');?>：</td>
+            <td><?php echo ($data["age"]); ?></td>
+            <td width="100" style="text-align: right;font-weight: bold;"><?php echo L('WEIXIN');?>：</td>
+            <td><?php echo ($data["weixin"]); ?></td>
+        </tr>
+        <tr>
+            <td width="100" style="text-align: right;font-weight: bold;"><?php echo L('MOBILE');?>：</td>
+            <td><?php echo ($data["mobile"]); ?></td>
+            <td width="100" style="text-align: right;font-weight: bold;"><?php echo L('EMAIL');?>：</td>
             <td><?php echo ($data["email"]); ?></td>
+        </tr>
+        <tr>
+            <td width="100" style="text-align: right;font-weight: bold;"><?php echo L('RANK');?>：</td>
             <td>
                 <?php if($data['rank'] == 1): ?>卖咖
                     <?php elseif($data['rank'] == 2): ?>资深卖咖
                     <?php elseif($data['rank'] == 3): ?>大咖
                     <?php else: endif; ?>
             </td>
-            <td><?php echo ($data["pid"]); ?></td>
+            <td width="100" style="text-align: right;font-weight: bold;"><?php echo L('ZJ_NUM');?>：</td>
+            <td><?php echo ($data["zj_num"]); ?></td>
+        </tr>
+        <tr>
+            <td width="100" style="text-align: right;font-weight: bold;"><?php echo L('OCCUPATION');?>：</td>
+            <td><?php echo ($data["occupation"]); ?></td>
+            <td width="100" style="text-align: right;font-weight: bold;"><?php echo L('JJ_NUM');?>：</td>
+            <td><?php echo ($data["jj_num"]); ?></td>
+        </tr>
+        <tr>
+            <td width="100" style="text-align: right;font-weight: bold;"><?php echo L('PAY_INFO');?>：</td>
             <td>
                 <?php if($data['pay_type'] == 1): ?>599
                     <?php elseif($data['pay_type'] == 2): ?>
                     1599
                     <?php else: endif; ?>
             </td>
+            <td width="100" style="text-align: right;font-weight: bold;"><?php echo L('REMARK');?>：</td>
             <td><?php echo ($data["remark"]); ?></td>
-            <td><?php echo ($data["handle_user"]); ?></td>
-            <td><?php echo date('Y-m-d h:i:s',$data['create_time']); ?></td>
         </tr>
-        </tbody>
+        <tr>
+            <td style="text-align: right;font-weight: bold;"><?php echo L('AREA');?>：</td>
+            <td><?php echo ($data["province"]); ?></td>
+            <td><?php echo ($data["city"]); ?></td>
+            <td><?php echo ($data["area"]); ?></td>
+        </tr>
+        <tr>
+            <td width="100" style="text-align: right;font-weight: bold;"><?php echo L('HANDLE_USER');?>：</td>
+            <td><?php echo ($data["handle_user"]); ?></td>
+            <td width="100" style="text-align: right;font-weight: bold;"><?php echo L('CREATE_TIME');?>：</td>
+            <td><?php echo date('Y-m-d H:i:s', $data['create_time']); ?></td>
+        </tr>
     </table>
 
     会员下线：
-    <style>
-        .relation-ships tr td {text-align: center;}
-        .relation-ships tr td div {display: inline-block;min-width: 150px;}
-        .relation-ships tr td span {display: inline-block;border: 1px solid #fff;color: #fff;min-width: 80px;
-                                    height: 30px;line-height: 30px;padding-left: 5px;padding-right: 5px;}
-        .bg-1 {background-color: #e00000;}
-        .bg-2 {background-color: #df5f18;}
-        .bg-3 {background-color: #ffb900;}
-        .bg-4 {background-color: #89c261;}
-        .bg-5 {background-color: #62c2c1;}
-        .border-1 {border: 2px solid #e00000;}
-        .border-2 {border: 2px solid #df5f18;}
-        .border-3 {border: 2px solid #ffb900;}
-        .border-4 {border: 2px solid #89c261;}
-        .border-5 {border: 2px solid #62c2c1;}
-    </style>
     <table class="table table-hover table-bordered relation-ships">
-        <!-- 一层 -->
-        <?php if(!empty($floor_2)){ ?>
-        <tr class="floor-1">
-            <td nowrap="nowrap">
-                <span class="bg-1"><?php echo ($data["member_name"]); ?></span>
-            </td>
-        </tr>
+        <?php if(!empty($tree)){ ?>
+            <?php if(is_array($tree)): $i = 0; $__LIST__ = $tree;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+                    <td style="text-indent:<?php echo ($vo['count']*20); ?>px;"><?php if(($vo["count"]) != "1"): ?>| --<?php endif; echo ($vo["member_name"]); ?></td>
+                </tr><?php endforeach; endif; else: echo "" ;endif; ?>
         <?php }else{ ?>
-        <tr class="floor-1">
-            <td nowrap="nowrap">
-                暂无下线会员
-            </td>
-        </tr>
+            <tr>
+                <td>暂无下线会员</td>
+            </tr>
         <?php } ?>
-
-        <!-- 二层 -->
-        <?php if(!empty($floor_2)){ ?>
-        <tr class="floor-2">
-            <td nowrap="nowrap">
-                <?php if(is_array($floor_2)): foreach($floor_2 as $key=>$item_2): ?><span class="bg-2"><?php echo ($item_2["member_name"]); ?></span><?php endforeach; endif; ?>
-            </td>
-        </tr>
-        <?php } ?>
-
-        <!-- 三层 -->
-        <?php if(!empty($floor_3)){ ?>
-        <tr class="floor-3">
-            <td nowrap="nowrap">
-                <!--<div class="border-2">-->
-                    <!-- -->
-                <!--</div>-->
-                <?php if(is_array($floor_3)): foreach($floor_3 as $key=>$item_3): ?><span class="bg-3"><?php echo ($item_3["member_name"]); ?></span><?php endforeach; endif; ?>
-            </td>
-        </tr>
-        <?php } ?>
-
-        <!-- 四层 -->
-        <?php if(!empty($floor_4)){ ?>
-        <tr class="floor-4">
-            <td nowrap="nowrap">
-                <!--<div class="border-3">-->
-                <!-- -->
-                <!--</div>-->
-                <?php if(is_array($floor_4)): foreach($floor_4 as $key=>$item_4): ?><span class="bg-4"><?php echo ($item_4["member_name"]); ?></span><?php endforeach; endif; ?>
-            </td>
-        </tr>
-        <?php } ?>
-
-        <!-- 五层 -->
-        <?php if(!empty($floor_5)){ ?>
-        <tr class="floor-5">
-            <td nowrap="nowrap">
-                <!--<div class="border-4">-->
-                <!-- -->
-                <!--</div>-->
-                <?php if(is_array($floor_5)): foreach($floor_5 as $key=>$item_5): ?><span class="bg-5"><?php echo ($item_5["member_name"]); ?></span><?php endforeach; endif; ?>
-            </td>
-        </tr>
-        <?php } ?>
-
     </table>
     </div>
     <a class="btn" href="<?php echo U('Member/index');?>"><?php echo L('BACK');?></a>

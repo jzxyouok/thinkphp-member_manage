@@ -8,40 +8,38 @@
     </ul>
     会员信息：
     <table class="table table-hover table-bordered">
-        <thead>
         <tr>
-            <th width="30">ID</th>
-            <!--<th width="80">{:L('MEMBER_ID')}</th>-->
-            <th width="100">{:L('NAME')}</th>
-            <th width="30">{:L('SEX')}</th>
-            <th width="30">{:L('AGE')}</th>
-            <th width="100">{:L('MOBILE')}</th>
-            <th width="100">{:L('OCCUPATION')}</th>
-            <th align="left">{:L('AREA')}</th>
-            <th width="100">{:L('WEIXIN')}</th>
-            <th width="100">{:L('QQ')}</th>
-            <th align="left">{:L('EMAIL')}</th>
-            <th width="50">{:L('RANK')}</th>
-            <th width="100">{:L('RECOMMEND')}</th>
-            <th width="60">{:L('PAY_INFO')}</th>
-            <th align="left">{:L('REMARK')}</th>
-            <th width="60">{:L('HANDLE_USER')}</th>
-            <th width="130">{:L('CREATE_TIME')}</th>
+            <td width="100" style="text-align: right;font-weight: bold;">ID：</td>
+            <td width="150">{$data.id}</td>
+            <td width="100" style="text-align: right;font-weight: bold;">{:L('RECOMMEND')}：</td>
+            <td>{$data.pid}</td>
         </tr>
-        </thead>
-        <tbody>
         <tr>
-            <td>{$data.id}</td>
-            <!--<td>{$vo.member_id}</td>-->
+            <td width="100" style="text-align: right;font-weight: bold;">{:L('NAME')}：</td>
             <td>{$data.member_name}</td>
+            <td width="100" style="text-align: right;font-weight: bold;">{:L('RECOMMEND_NAME')}：</td>
+            <td>{$data.p_member_name}</td>
+        </tr>
+        <tr>
+            <td width="100" style="text-align: right;font-weight: bold;">{:L('SEX')}：</td>
             <td><if condition="$data['sex'] == 1">男<else />女</if></td>
-            <td>{$data.age}</td>
-            <td>{$data.mobile}</td>
-            <td>{$data.occupation}</td>
-            <td>{$data.area}</td>
-            <td>{$data.weixin}</td>
+            <td width="100" style="text-align: right;font-weight: bold;">{:L('QQ')}：</td>
             <td>{$data.qq}</td>
+        </tr>
+        <tr>
+            <td width="100" style="text-align: right;font-weight: bold;">{:L('AGE')}：</td>
+            <td>{$data.age}</td>
+            <td width="100" style="text-align: right;font-weight: bold;">{:L('WEIXIN')}：</td>
+            <td>{$data.weixin}</td>
+        </tr>
+        <tr>
+            <td width="100" style="text-align: right;font-weight: bold;">{:L('MOBILE')}：</td>
+            <td>{$data.mobile}</td>
+            <td width="100" style="text-align: right;font-weight: bold;">{:L('EMAIL')}：</td>
             <td>{$data.email}</td>
+        </tr>
+        <tr>
+            <td width="100" style="text-align: right;font-weight: bold;">{:L('RANK')}：</td>
             <td>
                 <if condition="$data['rank'] eq 1">卖咖
                     <elseif condition="$data['rank'] eq 2" />资深卖咖
@@ -49,7 +47,17 @@
                     <else/>
                 </if>
             </td>
-            <td>{$data.pid}</td>
+            <td width="100" style="text-align: right;font-weight: bold;">{:L('ZJ_NUM')}：</td>
+            <td>{$data.zj_num}</td>
+        </tr>
+        <tr>
+            <td width="100" style="text-align: right;font-weight: bold;">{:L('OCCUPATION')}：</td>
+            <td>{$data.occupation}</td>
+            <td width="100" style="text-align: right;font-weight: bold;">{:L('JJ_NUM')}：</td>
+            <td>{$data.jj_num}</td>
+        </tr>
+        <tr>
+            <td width="100" style="text-align: right;font-weight: bold;">{:L('PAY_INFO')}：</td>
             <td>
                 <if condition="$data['pay_type'] eq 1">
                     599
@@ -58,99 +66,36 @@
                     <else/>
                 </if>
             </td>
+            <td width="100" style="text-align: right;font-weight: bold;">{:L('REMARK')}：</td>
             <td>{$data.remark}</td>
-            <td>{$data.handle_user}</td>
-            <td><php>echo date('Y-m-d h:i:s',$data['create_time']);</php></td>
         </tr>
-        </tbody>
+        <tr>
+            <td style="text-align: right;font-weight: bold;">{:L('AREA')}：</td>
+            <td>{$data.province}</td>
+            <td>{$data.city}</td>
+            <td>{$data.area}</td>
+        </tr>
+        <tr>
+            <td width="100" style="text-align: right;font-weight: bold;">{:L('HANDLE_USER')}：</td>
+            <td>{$data.handle_user}</td>
+            <td width="100" style="text-align: right;font-weight: bold;">{:L('CREATE_TIME')}：</td>
+            <td><php>echo date('Y-m-d H:i:s', $data['create_time']);</php></td>
+        </tr>
     </table>
 
     会员下线：
-    <style>
-        .relation-ships tr td {text-align: center;}
-        .relation-ships tr td div {display: inline-block;min-width: 150px;}
-        .relation-ships tr td span {display: inline-block;border: 1px solid #fff;color: #fff;min-width: 80px;
-                                    height: 30px;line-height: 30px;padding-left: 5px;padding-right: 5px;}
-        .bg-1 {background-color: #e00000;}
-        .bg-2 {background-color: #df5f18;}
-        .bg-3 {background-color: #ffb900;}
-        .bg-4 {background-color: #89c261;}
-        .bg-5 {background-color: #62c2c1;}
-        .border-1 {border: 2px solid #e00000;}
-        .border-2 {border: 2px solid #df5f18;}
-        .border-3 {border: 2px solid #ffb900;}
-        .border-4 {border: 2px solid #89c261;}
-        .border-5 {border: 2px solid #62c2c1;}
-    </style>
     <table class="table table-hover table-bordered relation-ships">
-        <!-- 一层 -->
-        <php>if(!empty($floor_2)){</php>
-        <tr class="floor-1">
-            <td nowrap="nowrap">
-                <span class="bg-1">{$data.member_name}</span>
-            </td>
-        </tr>
+        <php>if(!empty($tree)){</php>
+            <volist name="tree" id="vo">
+                <tr>
+                    <td style="text-indent:{$vo['count']*20}px;"><neq name="vo.count" value="1">| -- </neq>{$vo.member_name}</td>
+                </tr>
+            </volist>
         <php>}else{</php>
-        <tr class="floor-1">
-            <td nowrap="nowrap">
-                暂无下线会员
-            </td>
-        </tr>
+            <tr>
+                <td>暂无下线会员</td>
+            </tr>
         <php>}</php>
-
-        <!-- 二层 -->
-        <php>if(!empty($floor_2)){</php>
-        <tr class="floor-2">
-            <td nowrap="nowrap">
-                <foreach name="floor_2" item="item_2">
-                    <span class="bg-2">{$item_2.member_name}</span>
-                </foreach>
-            </td>
-        </tr>
-        <php>}</php>
-
-        <!-- 三层 -->
-        <php>if(!empty($floor_3)){</php>
-        <tr class="floor-3">
-            <td nowrap="nowrap">
-                <!--<div class="border-2">-->
-                    <!-- -->
-                <!--</div>-->
-                <foreach name="floor_3" item="item_3">
-                    <span class="bg-3">{$item_3.member_name}</span>
-                </foreach>
-            </td>
-        </tr>
-        <php>}</php>
-
-        <!-- 四层 -->
-        <php>if(!empty($floor_4)){</php>
-        <tr class="floor-4">
-            <td nowrap="nowrap">
-                <!--<div class="border-3">-->
-                <!-- -->
-                <!--</div>-->
-                <foreach name="floor_4" item="item_4">
-                    <span class="bg-4">{$item_4.member_name}</span>
-                </foreach>
-            </td>
-        </tr>
-        <php>}</php>
-
-        <!-- 五层 -->
-        <php>if(!empty($floor_5)){</php>
-        <tr class="floor-5">
-            <td nowrap="nowrap">
-                <!--<div class="border-4">-->
-                <!-- -->
-                <!--</div>-->
-                <foreach name="floor_5" item="item_5">
-                    <span class="bg-5">{$item_5.member_name}</span>
-                </foreach>
-            </td>
-        </tr>
-        <php>}</php>
-
     </table>
     </div>
     <a class="btn" href="{:U('Member/index')}">{:L('BACK')}</a>

@@ -1,0 +1,757 @@
+[ 2016-03-29T08:33:10+08:00 ] 127.0.0.1 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0200s ]
+SQL: SELECT * FROM `cmf_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_role_user` [ RunTime:0.0050s ]
+SQL: SELECT `role_id` FROM cmf_role_user a INNER JOIN cmf_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0250s ]
+SQL: UPDATE `cmf_users` SET `user_login`='admin',`user_pass`='###e8fd9b876db9e39b1643eb29ab9559ec',`user_nicename`='admin',`user_email`='admin@localhost.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='127.0.0.1',`last_login_time`='2016-03-29 08:33:10',`create_time`='2016-03-18 05:14:43',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '1' [ RunTime:0.0040s ]
+
+[ 2016-03-29T08:33:27+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=12
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=12 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-29T08:33:28+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `cmf_member` WHERE `mobile` = '1231121' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: auto F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `cmf_member` (`member_name`,`sex`,`age`,`mobile`,`occupation`,`area`,`weixin`,`qq`,`email`,`rank`,`pid`,`remark`,`create_time`,`update_time`,`old_rank`,`handle_user`) VALUES ('asdsdasdaasd','1','0','1231121','',',,','','','','1','12','','1459211608','1459211608','1','admin') [ RunTime:0.0220s ]
+SQL: UPDATE `cmf_member` SET `member_id`='80000013' WHERE ( id=13 ) [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=13 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=12 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `relation`='0,1,3,4,12,13' WHERE ( id=13 ) [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%1,%' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '3' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '3' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%3,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '4' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '4' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%4,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '12' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '12' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%12,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=12 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_log` [ RunTime:0.0080s ]
+SQL: INSERT INTO `cmf_log` (`handle_user`,`desc`,`create_time`) VALUES ('admin','添加会员，会员ID：13，状态：成功！','1459211608') [ RunTime:0.0070s ]
+
+[ 2016-03-29T08:38:40+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `cmf_member` WHERE `mobile` = '1' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: auto F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `cmf_member` (`member_name`,`sex`,`age`,`mobile`,`occupation`,`area`,`weixin`,`qq`,`email`,`rank`,`pid`,`remark`,`create_time`,`update_time`,`old_rank`,`handle_user`) VALUES ('test','1','0','1','','','','','','1','0','','1459211920','1459211920','1','admin') [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `member_id`='80000001' WHERE ( id=1 ) [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `relation`='0,1' WHERE ( id=1 ) [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_log` [ RunTime:0.0010s ]
+SQL: INSERT INTO `cmf_log` (`handle_user`,`desc`,`create_time`) VALUES ('admin','添加会员，会员ID：1，状态：成功！','1459211920') [ RunTime:0.0010s ]
+
+[ 2016-03-29T08:38:57+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-03-29T08:38:58+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `cmf_member` WHERE `mobile` = '2' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: auto F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `cmf_member` (`member_name`,`sex`,`age`,`mobile`,`occupation`,`area`,`weixin`,`qq`,`email`,`rank`,`pid`,`remark`,`create_time`,`update_time`,`old_rank`,`handle_user`) VALUES ('a','1','0','2','','','','','','1','1','','1459211938','1459211938','1','admin') [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `member_id`='80000002' WHERE ( id=2 ) [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `relation`='0,1,2' WHERE ( id=2 ) [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%1,%' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `cmf_log` (`handle_user`,`desc`,`create_time`) VALUES ('admin','添加会员，会员ID：2，状态：成功！','1459211938') [ RunTime:0.0000s ]
+
+[ 2016-03-29T08:39:17+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-29T08:39:32+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `cmf_member` WHERE `mobile` = '3' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: auto F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `cmf_member` (`member_name`,`sex`,`age`,`mobile`,`occupation`,`area`,`weixin`,`qq`,`email`,`rank`,`pid`,`remark`,`create_time`,`update_time`,`old_rank`,`handle_user`) VALUES ('测试人员二','1','0','3','','','','','','1','1','','1459211972','1459211972','1','admin') [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `member_id`='80000003' WHERE ( id=3 ) [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `relation`='0,1,3' WHERE ( id=3 ) [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%1,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_log` [ RunTime:0.0010s ]
+SQL: INSERT INTO `cmf_log` (`handle_user`,`desc`,`create_time`) VALUES ('admin','添加会员，会员ID：3，状态：成功！','1459211972') [ RunTime:0.0010s ]
+
+[ 2016-03-29T08:40:26+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-29T08:40:29+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `cmf_member` WHERE `mobile` = '4' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: auto F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `cmf_member` (`member_name`,`sex`,`age`,`mobile`,`occupation`,`area`,`weixin`,`qq`,`email`,`rank`,`pid`,`remark`,`create_time`,`update_time`,`old_rank`,`handle_user`) VALUES ('saasa','1','0','4','','','','','','1','2','','1459212029','1459212029','1','admin') [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `member_id`='80000004' WHERE ( id=4 ) [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `relation`='0,1,2,4' WHERE ( id=4 ) [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%1,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '2' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '2' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%2,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `cmf_log` (`handle_user`,`desc`,`create_time`) VALUES ('admin','添加会员，会员ID：4，状态：成功！','1459212029') [ RunTime:0.0000s ]
+
+[ 2016-03-29T08:41:04+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-03-29T08:41:05+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `cmf_member` WHERE `mobile` = '443' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: auto F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `cmf_member` (`member_name`,`sex`,`age`,`mobile`,`occupation`,`area`,`weixin`,`qq`,`email`,`rank`,`pid`,`remark`,`create_time`,`update_time`,`old_rank`,`handle_user`) VALUES ('asaaa','1','0','443','','','','','','1','3','','1459212065','1459212065','1','admin') [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `member_id`='80000005' WHERE ( id=5 ) [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=5 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `relation`='0,1,3,5' WHERE ( id=5 ) [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%1,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '3' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '3' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%3,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `cmf_log` (`handle_user`,`desc`,`create_time`) VALUES ('admin','添加会员，会员ID：5，状态：成功！','1459212065') [ RunTime:0.0000s ]
+
+[ 2016-03-29T08:41:45+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-29T08:41:46+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `cmf_member` WHERE `mobile` = '234523' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: auto F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `cmf_member` (`member_name`,`sex`,`age`,`mobile`,`occupation`,`area`,`weixin`,`qq`,`email`,`rank`,`pid`,`remark`,`create_time`,`update_time`,`old_rank`,`handle_user`) VALUES ('测试人员三','1','0','234523','','','','','','1','1','','1459212106','1459212106','1','admin') [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `member_id`='80000006' WHERE ( id=6 ) [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=6 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `cmf_member` SET `relation`='0,1,6' WHERE ( id=6 ) [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%1,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_log` [ RunTime:0.0010s ]
+SQL: INSERT INTO `cmf_log` (`handle_user`,`desc`,`create_time`) VALUES ('admin','添加会员，会员ID：6，状态：成功！','1459212106') [ RunTime:0.0000s ]
+
+[ 2016-03-29T08:42:15+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=6
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=6 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-29T08:42:16+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `cmf_member` WHERE `mobile` = '3465346' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: auto F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `cmf_member` (`member_name`,`sex`,`age`,`mobile`,`occupation`,`area`,`weixin`,`qq`,`email`,`rank`,`pid`,`remark`,`create_time`,`update_time`,`old_rank`,`handle_user`) VALUES ('asdaassa','1','0','3465346','','','','','','1','6','','1459212136','1459212136','1','admin') [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `member_id`='80000007' WHERE ( id=7 ) [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=7 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=6 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `relation`='0,1,6,7' WHERE ( id=7 ) [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%1,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '6' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '6' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%6,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=6 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_log` [ RunTime:0.0010s ]
+SQL: INSERT INTO `cmf_log` (`handle_user`,`desc`,`create_time`) VALUES ('admin','添加会员，会员ID：7，状态：成功！','1459212136') [ RunTime:0.0000s ]
+
+[ 2016-03-29T08:42:51+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-29T08:42:52+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `cmf_member` WHERE `mobile` = '2342223' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: auto F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `cmf_member` (`member_name`,`sex`,`age`,`mobile`,`occupation`,`area`,`weixin`,`qq`,`email`,`rank`,`pid`,`remark`,`create_time`,`update_time`,`old_rank`,`handle_user`) VALUES ('测试','1','0','2342223','','','','','','1','4','','1459212172','1459212172','1','admin') [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `member_id`='80000008' WHERE ( id=8 ) [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=8 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `relation`='0,1,2,4,8' WHERE ( id=8 ) [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%1,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '2' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '2' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%2,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '4' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '4' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%4,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_log` [ RunTime:0.0010s ]
+SQL: INSERT INTO `cmf_log` (`handle_user`,`desc`,`create_time`) VALUES ('admin','添加会员，会员ID：8，状态：成功！','1459212172') [ RunTime:0.0000s ]
+
+[ 2016-03-29T09:10:13+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `cmf_member` WHERE `mobile` = '1' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: auto F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `cmf_member` (`member_name`,`sex`,`age`,`mobile`,`occupation`,`area`,`weixin`,`qq`,`email`,`rank`,`pid`,`remark`,`create_time`,`update_time`,`old_rank`,`handle_user`) VALUES ('顶级会员','1','0','1','','','','','','1','0','','1459213813','1459213813','1','admin') [ RunTime:0.0010s ]
+SQL: UPDATE `cmf_member` SET `member_id`='80000001' WHERE ( id=1 ) [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `relation`='0,1' WHERE ( id=1 ) [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_log` [ RunTime:0.0010s ]
+SQL: INSERT INTO `cmf_log` (`handle_user`,`desc`,`create_time`) VALUES ('admin','添加会员，会员ID：1，状态：成功！','1459213813') [ RunTime:0.0000s ]
+
+[ 2016-03-29T09:10:26+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-03-29T09:10:27+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `cmf_member` WHERE `mobile` = '2' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: auto F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `cmf_member` (`member_name`,`sex`,`age`,`mobile`,`occupation`,`area`,`weixin`,`qq`,`email`,`rank`,`pid`,`remark`,`create_time`,`update_time`,`old_rank`,`handle_user`) VALUES ('二级会员一','1','0','2','','','','','','1','1','','1459213827','1459213827','1','admin') [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `member_id`='80000002' WHERE ( id=2 ) [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `relation`='0,1,2' WHERE ( id=2 ) [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%1,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `cmf_log` (`handle_user`,`desc`,`create_time`) VALUES ('admin','添加会员，会员ID：2，状态：成功！','1459213827') [ RunTime:0.0000s ]
+
+[ 2016-03-29T09:10:42+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-29T09:10:43+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `cmf_member` WHERE `mobile` = '3' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: auto F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `cmf_member` (`member_name`,`sex`,`age`,`mobile`,`occupation`,`area`,`weixin`,`qq`,`email`,`rank`,`pid`,`remark`,`create_time`,`update_time`,`old_rank`,`handle_user`) VALUES ('二级会员二','1','0','3','','','','','','1','1','','1459213843','1459213843','1','admin') [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `member_id`='80000003' WHERE ( id=3 ) [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `cmf_member` SET `relation`='0,1,3' WHERE ( id=3 ) [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%1,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `cmf_log` (`handle_user`,`desc`,`create_time`) VALUES ('admin','添加会员，会员ID：3，状态：成功！','1459213843') [ RunTime:0.0000s ]
+
+[ 2016-03-29T09:11:08+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-29T09:11:09+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `cmf_member` WHERE `mobile` = '11' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: auto F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `cmf_member` (`member_name`,`sex`,`age`,`mobile`,`occupation`,`area`,`weixin`,`qq`,`email`,`rank`,`pid`,`remark`,`create_time`,`update_time`,`old_rank`,`handle_user`) VALUES ('三级会员一','1','0','11','','','','','','1','2','','1459213869','1459213869','1','admin') [ RunTime:0.0010s ]
+SQL: UPDATE `cmf_member` SET `member_id`='80000004' WHERE ( id=4 ) [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `relation`='0,1,2,4' WHERE ( id=4 ) [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%1,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '2' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '2' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%2,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `cmf_log` (`handle_user`,`desc`,`create_time`) VALUES ('admin','添加会员，会员ID：4，状态：成功！','1459213869') [ RunTime:0.0010s ]
+
+[ 2016-03-29T09:11:33+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-29T09:11:34+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0050s ]
+NOTIC: [8] Undefined index: validate F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `cmf_member` WHERE `mobile` = '121' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: auto F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `cmf_member` (`member_name`,`sex`,`age`,`mobile`,`occupation`,`area`,`weixin`,`qq`,`email`,`rank`,`pid`,`remark`,`create_time`,`update_time`,`old_rank`,`handle_user`) VALUES ('三级会员二','1','0','121','','','','','','1','2','','1459213894','1459213894','1','admin') [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `member_id`='80000005' WHERE ( id=5 ) [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=5 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `relation`='0,1,2,5' WHERE ( id=5 ) [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%1,%' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '2' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '2' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%2,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `cmf_log` (`handle_user`,`desc`,`create_time`) VALUES ('admin','添加会员，会员ID：5，状态：成功！','1459213894') [ RunTime:0.0000s ]
+
+[ 2016-03-29T09:24:20+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-03-29T09:24:21+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `cmf_member` WHERE `mobile` = '11211' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: auto F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `cmf_member` (`member_name`,`sex`,`age`,`mobile`,`occupation`,`area`,`weixin`,`qq`,`email`,`rank`,`pid`,`remark`,`create_time`,`update_time`,`old_rank`,`handle_user`) VALUES ('三级会员三','1','0','11211','','','','','','1','3','','1459214661','1459214661','1','admin') [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `member_id`='80000006' WHERE ( id=6 ) [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=6 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `relation`='0,1,3,6' WHERE ( id=6 ) [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%1,%' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '3' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '3' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%3,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `cmf_log` (`handle_user`,`desc`,`create_time`) VALUES ('admin','添加会员，会员ID：6，状态：成功！','1459214661') [ RunTime:0.0000s ]
+
+[ 2016-03-29T09:25:19+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-29T09:25:21+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `cmf_member` WHERE `mobile` = '1111' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: auto F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `cmf_member` (`member_name`,`sex`,`age`,`mobile`,`occupation`,`area`,`weixin`,`qq`,`email`,`rank`,`pid`,`remark`,`create_time`,`update_time`,`old_rank`,`handle_user`) VALUES ('三级会员四','1','0','1111','','','','','','1','2','','1459214721','1459214721','1','admin') [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `member_id`='80000007' WHERE ( id=7 ) [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=7 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `relation`='0,1,2,7' WHERE ( id=7 ) [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%1,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '2' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '2' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%2,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `cmf_log` (`handle_user`,`desc`,`create_time`) VALUES ('admin','添加会员，会员ID：7，状态：成功！','1459214721') [ RunTime:0.0000s ]
+
+[ 2016-03-29T09:27:42+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=info&id=1
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `cmf_member` WHERE ( pid= ) 
+
+[ 2016-03-29T09:29:02+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=info&id=1
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `cmf_member` WHERE ( pid= ) 
+
+[ 2016-03-29T09:29:13+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=info&id=1
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `cmf_member` WHERE ( pid= ) 
+
+[ 2016-03-29T09:36:00+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-29T09:36:01+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `cmf_member` WHERE `mobile` = '23542342134' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: auto F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `cmf_member` (`member_name`,`sex`,`age`,`mobile`,`occupation`,`area`,`weixin`,`qq`,`email`,`rank`,`pid`,`remark`,`create_time`,`update_time`,`old_rank`,`handle_user`) VALUES ('asdasfdasdfsd','1','0','23542342134','','','','','','1','4','','1459215361','1459215361','1','admin') [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `member_id`='80000008' WHERE ( id=8 ) [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=8 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `relation`='0,1,2,4,8' WHERE ( id=8 ) [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%1,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '2' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '2' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%2,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '4' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '4' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%4,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `cmf_log` (`handle_user`,`desc`,`create_time`) VALUES ('admin','添加会员，会员ID：8，状态：成功！','1459215361') [ RunTime:0.0000s ]
+
+[ 2016-03-29T09:50:16+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=info&id=1
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `cmf_member` WHERE ( pid= ) 
+
+[ 2016-03-29T10:17:11+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=info&id=1
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `cmf_member` WHERE ( pid= ) LIMIT 1  
+
+[ 2016-03-29T10:55:20+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=info&id=1
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `cmf_member` WHERE ( pid= ) 
+
+[ 2016-03-29T14:32:37+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Menu&a=index&menuid=100
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-03-29T14:33:03+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Menu&a=add&parentid=135&menuid=100
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-03-29T14:33:11+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Menu&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_menu` [ RunTime:0.0020s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+SQL: SHOW COLUMNS FROM `cmf_auth_rule` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: validate F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+
+[ 2016-03-29T14:33:27+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Menu&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_menu` [ RunTime:0.0020s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+SQL: SHOW COLUMNS FROM `cmf_auth_rule` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `cmf_menu` WHERE `app` = 'Admin' AND `model` = 'Menu' AND `action` = 'default' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-03-29T14:33:31+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Menu&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_menu` [ RunTime:0.0020s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+SQL: SHOW COLUMNS FROM `cmf_auth_rule` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: validate F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `cmf_menu` WHERE `app` = 'Admin' AND `model` = 'Menu' AND `action` = 'default1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `parentid` FROM `cmf_menu` WHERE `id` = 135 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `parentid` FROM `cmf_menu` WHERE `id` = 134 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `parentid` FROM `cmf_menu` WHERE `id` = 133 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-03-29T14:33:36+08:00 ] 127.0.0.1 /index.php?g=Admin&m=menu&a=index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-03-29T15:01:17+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=info&id=1
+ERR: Think\Model:getAll方法不存在！
+
+[ 2016-03-29T15:01:39+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=info&id=1
+ERR: 1146:Table 'thinkcmf.bg_cate' doesn't exist
+ [ SQL语句 ] : SELECT * FROM bg_cate
+
+[ 2016-03-29T16:50:29+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=11
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=11 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-29T16:50:31+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `cmf_member` WHERE `mobile` = '11111111' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: auto F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `cmf_member` (`member_name`,`sex`,`age`,`mobile`,`occupation`,`area`,`weixin`,`qq`,`email`,`rank`,`pid`,`remark`,`create_time`,`update_time`,`old_rank`,`handle_user`) VALUES ('asdsaaa','1','0','11111111','','','','','','1','11','','1459241431','1459241431','1','admin') [ RunTime:0.0210s ]
+SQL: UPDATE `cmf_member` SET `member_id`='80000012' WHERE ( id=12 ) [ RunTime:0.0330s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=12 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=11 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `cmf_member` SET `relation`='0,1,2,4,9,11,12' WHERE ( id=12 ) [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%1,%' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '2' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '2' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%2,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '4' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '4' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%4,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '9' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '9' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%9,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '11' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '11' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%11,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=9 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=11 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_log` [ RunTime:0.0170s ]
+SQL: INSERT INTO `cmf_log` (`handle_user`,`desc`,`create_time`) VALUES ('admin','添加会员，会员ID：12，状态：成功！','1459241431') [ RunTime:0.0060s ]
+
+[ 2016-03-29T16:50:57+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=getAjaxMember&id=13
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=13 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-29T16:50:58+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `cmf_member` WHERE `mobile` = '11111111111111' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: auto F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `cmf_member` (`member_name`,`sex`,`age`,`mobile`,`occupation`,`area`,`weixin`,`qq`,`email`,`rank`,`pid`,`remark`,`create_time`,`update_time`,`old_rank`,`handle_user`) VALUES ('aaaaaaaaaa','1','0','11111111111111','','','','','','1','13','','1459241458','1459241458','1','admin') [ RunTime:0.0010s ]
+SQL: UPDATE `cmf_member` SET `member_id`='80000013' WHERE ( id=13 ) [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=13 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=13 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `relation`=',13' WHERE ( id=13 ) [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_log` [ RunTime:0.0010s ]
+SQL: INSERT INTO `cmf_log` (`handle_user`,`desc`,`create_time`) VALUES ('admin','添加会员，会员ID：13，状态：成功！','1459241458') [ RunTime:0.0010s ]
+

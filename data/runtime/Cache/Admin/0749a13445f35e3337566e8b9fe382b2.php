@@ -79,7 +79,7 @@ var GV = {
 				<th align="left"><?php echo L('REMARK');?></th>
 				<th width="60"><?php echo L('HANDLE_USER');?></th>
 				<th width="130"><?php echo L('CREATE_TIME');?></th>
-				<th width="100"><?php echo L('ACTIONS');?></th>
+				<th width="130"><?php echo L('ACTIONS');?></th>
 			</tr>
 			</thead>
 			<tbody>
@@ -105,7 +105,8 @@ var GV = {
 					<td>
 						<a class="js-dialog" href="<?php echo U('Member/payment_record',array('id'=>$vo['id']));?>"><?php echo L('PAY');?></a> |
 						<a href="<?php echo U('Member/info',array('id'=>$vo['id']));?>"><?php echo L('INFO');?></a> |
-						<a href="<?php echo U('Member/edit',array('id'=>$vo['id']));?>"><?php echo L('EDIT');?></a>
+						<a href="<?php echo U('Member/edit',array('id'=>$vo['id']));?>"><?php echo L('EDIT');?></a> |
+						<a class="js-ajax-delete" href="<?php echo U('Member/delete',array('id'=>$vo['id']));?>"><?php echo L('DELETE');?></a>
 					</td>
 				</tr><?php endforeach; endif; ?>
 			</tbody>

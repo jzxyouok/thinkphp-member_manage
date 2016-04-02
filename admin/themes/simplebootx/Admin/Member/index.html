@@ -34,7 +34,7 @@
 				<th align="left">{:L('REMARK')}</th>
 				<th width="60">{:L('HANDLE_USER')}</th>
 				<th width="130">{:L('CREATE_TIME')}</th>
-				<th width="100">{:L('ACTIONS')}</th>
+				<th width="130">{:L('ACTIONS')}</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -62,7 +62,8 @@
 					<td>
 						<a class="js-dialog" href="{:U('Member/payment_record',array('id'=>$vo['id']))}">{:L('PAY')}</a> |
 						<a href="{:U('Member/info',array('id'=>$vo['id']))}">{:L('INFO')}</a> |
-						<a href="{:U('Member/edit',array('id'=>$vo['id']))}">{:L('EDIT')}</a>
+						<a href="{:U('Member/edit',array('id'=>$vo['id']))}">{:L('EDIT')}</a> |
+						<a class="js-ajax-delete" href="{:U('Member/delete',array('id'=>$vo['id']))}">{:L('DELETE')}</a>
 					</td>
 				</tr>
 			</foreach>

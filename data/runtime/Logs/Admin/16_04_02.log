@@ -1,0 +1,290 @@
+[ 2016-04-02T14:19:04+08:00 ] 127.0.0.1 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0540s ]
+SQL: SELECT * FROM `cmf_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_role_user` [ RunTime:0.0350s ]
+SQL: SELECT `role_id` FROM cmf_role_user a INNER JOIN cmf_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0510s ]
+SQL: UPDATE `cmf_users` SET `user_login`='admin',`user_pass`='###e8fd9b876db9e39b1643eb29ab9559ec',`user_nicename`='admin',`user_email`='admin@localhost.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='127.0.0.1',`last_login_time`='2016-04-02 14:19:04',`create_time`='2016-03-18 05:14:43',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '1' [ RunTime:0.0900s ]
+
+[ 2016-04-02T15:06:11+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=edit_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto F:\web\thinkcmf-member\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: UPDATE `cmf_member` SET `member_name`='顶级会员',`sex`='1',`age`='0',`mobile`='1',`occupation`='',`area`='北京市,市辖区,东城区',`weixin`='',`qq`='',`email`='',`pid`='0',`remark`='',`update_time`='1459580771',`handle_user`='admin' WHERE `id` = 1 [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_log` [ RunTime:0.0300s ]
+SQL: INSERT INTO `cmf_log` (`handle_user`,`desc`,`create_time`) VALUES ('admin','更新会员信息，会员ID：1，状态：成功！','1459580771') [ RunTime:0.0220s ]
+
+[ 2016-04-02T15:11:58+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=delete&id=13
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-02T15:12:48+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=delete&id=13
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-02T15:14:11+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=delete&id=13
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-02T15:14:17+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=delete&id=12
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-02T15:21:25+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=delete&id=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-04-02T15:21:33+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=delete&id=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = 2 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-04-02T15:22:17+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=delete&id=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = 3 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-04-02T15:29:11+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=delete&id=13
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = 13 LIMIT 1   [ RunTime:0.0000s ]
+SQL: DELETE FROM `cmf_member` WHERE `id` = 13 [ RunTime:0.0080s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=13 ) LIMIT 1   [ RunTime:0.0000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `cmf_member` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `cmf_member` WHERE ( id= ) LIMIT 1  
+
+[ 2016-04-02T15:32:30+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=delete&id=12
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = 12 LIMIT 1   [ RunTime:0.0000s ]
+SQL: DELETE FROM `cmf_member` WHERE `id` = 12 [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=12 ) LIMIT 1   [ RunTime:0.0000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `cmf_member` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `cmf_member` WHERE ( id= ) LIMIT 1  
+
+[ 2016-04-02T15:32:48+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=delete&id=12
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = 12 LIMIT 1   [ RunTime:0.0000s ]
+SQL: DELETE FROM `cmf_member` WHERE `id` = 12 [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=12 ) LIMIT 1   [ RunTime:0.0000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `cmf_member` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `cmf_member` WHERE ( id= ) LIMIT 1  
+
+[ 2016-04-02T15:34:20+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=delete&id=11
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = 11 LIMIT 1   [ RunTime:0.0010s ]
+SQL: DELETE FROM `cmf_member` WHERE ( id=11 ) [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=11 ) LIMIT 1   [ RunTime:0.0000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `cmf_member` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `cmf_member` WHERE ( id= ) LIMIT 1  
+
+[ 2016-04-02T15:35:37+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=delete&id=10
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = 10 LIMIT 1   [ RunTime:0.0000s ]
+SQL: DELETE FROM `cmf_member` WHERE `id` = 10 [ RunTime:0.0000s ]
+
+[ 2016-04-02T15:36:03+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=delete&id=9
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = 9 LIMIT 1   [ RunTime:0.0000s ]
+SQL: DELETE FROM `cmf_member` WHERE `id` = 9 [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=9 ) LIMIT 1   [ RunTime:0.0000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `cmf_member` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `cmf_member` WHERE ( id= ) LIMIT 1  
+
+[ 2016-04-02T15:36:35+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=delete&id=8
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = 8 LIMIT 1   [ RunTime:0.0000s ]
+SQL: DELETE FROM `cmf_member` WHERE `id` = 8 [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=8 ) LIMIT 1   [ RunTime:0.0010s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `cmf_member` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `cmf_member` WHERE ( id= ) LIMIT 1  
+
+[ 2016-04-02T15:37:30+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=delete&id=7
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = 7 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=7 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: DELETE FROM `cmf_member` WHERE `id` = 7 [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%1,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '2' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%2,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '2' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-04-02T15:37:46+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=delete&id=6
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = 6 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=6 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: DELETE FROM `cmf_member` WHERE `id` = 6 [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%1,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '3' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%3,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '3' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `cmf_log` (`handle_user`,`desc`,`create_time`) VALUES ('admin','删除会员，会员ID：6，状态：成功！','1459582666') [ RunTime:0.0010s ]
+
+[ 2016-04-02T15:41:23+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=delete&id=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=5 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: DELETE FROM `cmf_member` WHERE `id` = 5 [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%1,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '2' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `relation` LIKE '%2,%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = '2' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `cmf_member` SET `rank`='1' WHERE ( id=1 ) [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cmf_log` [ RunTime:0.0010s ]
+SQL: INSERT INTO `cmf_log` (`handle_user`,`desc`,`create_time`) VALUES ('admin','会员推荐关系变动，会员ID：1,自动降级成为卖咖!','1459582883') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cmf_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: INSERT INTO `cmf_log` (`handle_user`,`desc`,`create_time`) VALUES ('admin','删除会员，会员ID：5，状态：成功！','1459582883') [ RunTime:0.0000s ]
+
+[ 2016-04-02T15:42:10+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Member&a=delete&id=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cmf_users` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cmf_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cmf_member` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cmf_member` WHERE `pid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+

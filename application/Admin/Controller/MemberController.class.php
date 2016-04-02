@@ -9,7 +9,7 @@
 namespace Admin\Controller;
 
 use Common\Controller\AdminbaseController;
-
+use Tree;
 class MemberController extends AdminbaseController{
 
     protected $member_model;
@@ -63,7 +63,6 @@ class MemberController extends AdminbaseController{
     public function add_post() {
         if (IS_POST) {
             if ($this->member_model->create()) {
-                $this->member_model->area = I('post.province').','.I('post.city').','.I('post.area');
                 if ($this->member_model->add()!==false) {
                     $this->_memberID();
                     $this->_relation();
@@ -183,7 +182,7 @@ class MemberController extends AdminbaseController{
         if (IS_POST) {
             $data = $this->member_model->create();
             if ($data) {
-                $data['area'] = I('post.province').','.I('post.city').','.I('post.area');
+                $data['area'] = I('post.province') ? I('post.province').','.I('post.city').','.I('post.area') : '';
                 if ($this->member_model->save($data)!==false) {
                     $this->_changeRelation($data['id']);
 
@@ -269,39 +268,46 @@ class MemberController extends AdminbaseController{
         if (!$data) {
             $this->error("该会员不存在！");
         }
+        if(!empty($data['pid'])){
+            $p_member = $this->getMember($data['pid']);
+            $data['p_member_name'] = $p_member['member_name'];
+        }
+        $data['zj_num'] = $this->getZJNum($data['id']);
+        $data['jj_num'] = $this->getJJNum($data['id']);
+
+        $area = explode(',', $data['area']);
+        $data['province'] = $area[0] ?: '-';
+        $data['city'] = $area[1] ?: '-';
+        $data['area'] = $area[2] ?: '-';
 
         // 数据关系图
-        $floor_3 = array();
-        $floor_4 = array();
-        $floor_5 = array();
-
-        $floor_2 = $this->member_model->where('pid='.$data['id'])->select();
-
-        foreach($floor_2 as $item_3){
-            $res_3 = $this->member_model->where('pid='.$item_3['id'])->find();
-            if($res_3){
-                $floor_3[] = $res_3;
-            }
-        }
-        foreach($floor_3 as $item_4){
-            $res_4 = $this->member_model->where('pid='.$item_4['id'])->find();
-            if($res_4){
-                $floor_4[] = $res_4;
-            }
-        }
-        foreach($floor_4 as $item_5){
-            $res_5 = $this->member_model->where('pid='.$item_5['id'])->find();
-            if($res_5){
-                $floor_5[] = $res_5;
-            }
-        }
+        $res = $this->member_model->field('id,member_name,pid')->select();
+        $tree = $this->getTree($res, $data['id']);
 
         $this->assign("data", $data);
-        $this->assign('floor_2', $floor_2);
-        $this->assign('floor_3', $floor_3);
-        $this->assign('floor_4', $floor_4);
-        $this->assign('floor_5', $floor_5);
+        $this->assign('tree', $tree);
         $this->display();
+    }
+
+    /**
+     * 根据PID获取所有子类
+     * @param $arr 数据库取出的结果集
+     * @param int $parent_id 指定PID
+     * @param int $lev
+     * @return array
+     */
+    public function getTree($arr,$parent_id = 0,$lev=1) {
+        static $list = array();
+        static $num = 0;
+        foreach($arr as $v) {
+            if($v['pid'] == $parent_id) {
+                $num = 0;
+                $v['count'] = $lev;
+                $list[] = $v;
+                $this->getTree($arr,$v['id'],$lev+1);
+            }
+        }
+        return $list;
     }
 
     /**
@@ -409,5 +415,24 @@ class MemberController extends AdminbaseController{
         $data['create_time'] = time();
         $res = $log_model->add($data);
         return $res;
+    }
+
+    public function delete(){
+        $id = intval(I("get.id"));;
+        $count = $this->getZJNum($id);
+        if ($count > 0) {
+            $this->error("该会员名下存在下级推荐会员，无法删除！");
+        }
+        $member = $this->getMember($id);
+        if ($this->member_model->delete($id)!==false) {
+            $p_member = $this->getMember($member['pid']);
+            if(!empty($p_member)){
+                $this->_lowerRank($p_member['relation']);
+            }
+            $this->handleLog('删除会员，会员ID：'.$id.'，状态：成功！');
+            $this->success("删除成功！");
+        } else {
+            $this->error("删除失败！");
+        }
     }
 }
